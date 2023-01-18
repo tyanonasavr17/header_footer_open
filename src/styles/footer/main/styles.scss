@@ -1,0 +1,28 @@
+$footer-background-color: #1d6da8;
+$footer-text-color: #fafbfc;
+$footer-divider-color: #f5f5f5;
+$error-color: #b94a48;
+
+@font-face {
+  font-family: PT Sans;
+  src: url('./public/fonts/PTSans-Regular.ttf');
+}
+
+.footer {
+  background-color: $footer-background-color;
+  clear: both;
+  color: $footer-text-color;
+  font-family: PT Sans;
+  height: 55px;
+  margin-top: -75px;
+  padding: 20px 0 0;
+  position: relative;
+}
+
+.divider {
+  border-left: 1px solid $footer-divider-color;
+  bottom: 1%;
+  left: 71%;
+  position: absolute;
+  top: 19%;
+}
