@@ -31,7 +31,6 @@ export default {}
 
 @font-face {
   font-family: PT Sans;
-  src: url('./public/fonts/PTSans-Regular.ttf');
 }
 
 .footer {
@@ -45,11 +44,47 @@ export default {}
   position: relative;
 }
 
+.footer a {
+  text-decoration: none;
+}
+
 .divider {
   border-left: 1px solid #f5f5f5;
   bottom: 1%;
   left: 71%;
   position: absolute;
   top: 19%;
+}
+
+.footer-right-div {
+  position: relative;
+  width: 580px;
+  height: 36px;
+  float: right;
+}
+
+.row-fluid {
+  width: 100%;
+}
+
+.row-fluid::before, .row-fluid::after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.row-fluid .span6 {
+  width: 48.717948717948715%;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.container {
+  width: 1250px !important;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

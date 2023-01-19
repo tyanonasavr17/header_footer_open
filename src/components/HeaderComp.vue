@@ -3,10 +3,24 @@
     <span class="eagles-logo"></span>
     <span class="cifropol-logo"></span>
 
+    <span class="brand-logo"></span>
     <hgroup>
       <h1>МВД России</h1>
       <h2>Сервис электронного документооборота</h2>
     </hgroup>
+    <span class="header-btn btn-folder btn-with-border"></span>
+
+    <span class="header-btn btn-home btn-with-border"></span>
+    <span class="header-btn btn-message btn-with-border">
+      <div class="header message-new"></div>
+    </span>
+
+    <div class="avatar-section btn-with-border">
+      <img src="@/assets/main/avatar.svg"/>
+      <span class="span">Имя пользователя</span>
+    </div>
+
+    <span class="header-btn btn-logout btn-with-border"></span>
 
   </header>
 </template>
@@ -19,7 +33,7 @@ export default {}
 
 @font-face {
   font-family: PT Sans;
-  src: url('./public/fonts/PTSans-Regular.ttf');
+  src: url('@/fonts/PTSans-Regular.ttf');
 }
 
 .header {
@@ -56,7 +70,7 @@ svg {
 }
 
 .eagles-logo {
-  background: url('src/assets/main/eagles.png') no-repeat center;
+  background: url('@/assets/main/eagles.png') no-repeat center;
   display: block;
   height: 60px;
   left: 63.5px;
@@ -65,7 +79,7 @@ svg {
 }
 
 .cifropol-logo {
-  background: url('src/assets/main/cifropol.svg') no-repeat center;
+  background: url('@/assets/main/cifropol.svg') no-repeat center;
   display: block;
   height: 26px;
   left: 48px;
@@ -75,7 +89,7 @@ svg {
 }
 
 .brand-logo {
-  background: url('src/assets/main/logo.png') no-repeat center;
+  background: url('@/assets/main/logo.png') no-repeat center;
   display: block;
   height: 38.33px;
   left: 180px;
@@ -93,7 +107,7 @@ svg {
   width: 180px;
 }
 
-span {
+.span {
   color: #fafbfc;
   display: inline-block;
   font-size: 12px;
@@ -131,17 +145,17 @@ a {
 }
 
 .btn-folder {
-  background: url('src/assets/main/folder.svg') no-repeat center;
+  background: url('@/assets/main/folder.svg') no-repeat center;
   right: 364px;
 }
 
 .btn-home {
-  background: url('src/assets/main/home.svg') no-repeat center;
+  background: url('@/assets/main/home.svg') no-repeat center;
   right: 303px;
 }
 
 .btn-message {
-  background: url('src/assets/main/message.svg') no-repeat center;
+  background: url('@/assets/main/message.svg') no-repeat center;
   right: 242px;
 }
 
@@ -156,7 +170,7 @@ a {
 }
 
 .btn-logout {
-  background: url('src/assets/main/exit-door.svg') no-repeat center;
+  background: url('@/assets/main/exit-door.svg') no-repeat center;
   right: 0;
 }
 
