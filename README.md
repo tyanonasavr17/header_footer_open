@@ -1,13 +1,13 @@
 # sed_header_footer
 
-## Project setup
-```
-npm install
+## Создание образа контейнера
+```bash
+docker image build -t header_footer .
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### Создание и запуск контейнера
+```bash
+docker container run --rm -p 8080:8080 header_footer
 ```
 
 ### Compiles and minifies for production
