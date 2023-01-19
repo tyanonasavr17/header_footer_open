@@ -48,6 +48,10 @@ export default {}
   text-decoration: none;
 }
 
+a {
+  display: inline;
+}
+
 .divider {
   border-left: 1px solid #f5f5f5;
   bottom: 1%;
