@@ -1,5 +1,5 @@
 <template>
-  <HeaderComp/>
+  <HeaderComp/> <!-- HeaderComWS или HeaderComNotAuth!-->
   <div class="wrapper">
   </div>
   <FooterComp/>

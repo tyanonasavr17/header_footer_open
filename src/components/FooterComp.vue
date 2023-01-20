@@ -13,8 +13,8 @@
             </div>
             <div class="divider"></div>
             <div>
-              <a href="mailto:helpdesk@mvd.ru">helpdesk@mvd.ru</a> <br>
-              <a href="https://it.mvd.ru/profile/requests/new">Отправить обращение</a>
+              <a href="mailto:helpdesk@mvd.ru">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;helpdesk@mvd.ru</a> <br>
+              <a href="https://it.mvd.ru/profile/requests/new">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;Отправить обращение</a>
             </div>
           </div>
         </div>
@@ -42,14 +42,11 @@ export default {}
   margin-top: -75px;
   padding: 20px 0 0;
   position: relative;
+  text-align: center;
 }
 
 .footer a {
   text-decoration: none;
-}
-
-a {
-  display: inline;
 }
 
 .divider {
@@ -90,5 +87,19 @@ a {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  display: inline-block;
+}
+
+a {
+  display: inline;
+  color: #fafbfc;
+}
+
+div {
+  display: inline-block;
+}
+
+div .span6 {
+  display: inline;
 }
 </style>

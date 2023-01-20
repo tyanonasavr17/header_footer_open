@@ -8,19 +8,6 @@
       <h1>МВД России</h1>
       <h2>Сервис электронного документооборота</h2>
     </hgroup>
-    <span class="header-btn btn-folder btn-with-border" title="Архив долгосрочного хранения"></span>
-
-    <span class="header-btn btn-home btn-with-border" title="Рабочее место исполнителя"></span>
-    <span class="header-btn btn-message btn-with-border" title="Беседы">
-      <div class="header message-new"></div>
-    </span>
-
-    <div class="avatar-section btn-with-border" title="Профиль">
-      <img src="@/assets/main/avatar.svg"/>
-      <span class="span">Имя пользователя</span>
-    </div>
-
-    <span class="header-btn btn-logout btn-with-border" title="Выход"></span>
 
   </header>
 </template>
@@ -98,15 +85,6 @@ svg {
   width: 62px;
 }
 
-.avatar-section {
-  display: inline-block;
-  height: 60px;
-  position: absolute;
-  right: 61px;
-  top: 0;
-  width: 180px;
-}
-
 .span {
   color: #fafbfc;
   display: inline-block;
@@ -128,65 +106,14 @@ img {
   margin-top: 6px;
 }
 
-a {
-  display: inline-block;
-  height: 60px;
-  margin-top: 0;
-  width: 180px;
-}
-
-.header-btn {
-  height: 60px;
-  overflow: hidden;
-  position: absolute;
-  text-indent: -9999px;
-  top: 0;
-  width: 60px;
-}
-
-.btn-folder {
-  background: url('@/assets/main/folder.svg') no-repeat center;
-  right: 364px;
-}
-
-.btn-home {
-  background: url('@/assets/main/home.svg') no-repeat center;
-  right: 303px;
-}
-
-.btn-message {
-  background: url('@/assets/main/message.svg') no-repeat center;
-  right: 242px;
-}
-
-.message-new {
-  background-color: rgba(190, 38, 39, 1);
-  border-radius: 50%;
-  height: 8px;
-  left: 39px;
-  position: relative;
-  top: 15px;
-  width: 8px;
-}
-
-.btn-logout {
-  background: url('@/assets/main/exit-door.svg') no-repeat center;
-  right: 0;
-}
-
-.btn-with-border {
-  border-left: 1px solid rgba(245, 245, 245, .5);
-}
-
 hgroup {
   margin-left: 252px;
   padding-top: 13px;
 }
 
 @media screen and (max-width: 915px) {
-  .header .btn-with-border {
+  .header {
     display: none;
   }
 }
-
 </style>

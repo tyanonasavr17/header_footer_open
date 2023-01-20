@@ -35,9 +35,10 @@
     "rules": {}
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
+    "ie 10",
+    "firefox 36",
+    "opera 30",
+    "chrome 38",
+    "safari 6"
   ]
 }
