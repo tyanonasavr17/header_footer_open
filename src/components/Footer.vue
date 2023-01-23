@@ -13,8 +13,9 @@
             </div>
             <div class="divider"></div>
             <div>
-              <a href="mailto:helpdesk@mvd.ru">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;helpdesk@mvd.ru</a> <br>
-              <a href="https://it.mvd.ru/profile/requests/new">&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;Отправить обращение</a>
+              <a href="https://it.mvd.ru/profile/requests/new">helpdesk@mvd.ru</a>
+              <br>
+              <a href="mailto:helpdesk@mvd.ru">Отправить обращение</a>
             </div>
           </div>
         </div>
@@ -28,9 +29,9 @@ export default {}
 </script>
 
 <style scoped>
-
 @font-face {
   font-family: PT Sans;
+  src: url('@/fonts/PTSans-Regular.ttf');
 }
 
 .footer {
@@ -52,7 +53,6 @@ export default {}
 .divider {
   border-left: 1px solid #f5f5f5;
   bottom: 1%;
-  left: 71%;
   position: absolute;
   top: 19%;
 }
@@ -62,6 +62,14 @@ export default {}
   width: 580px;
   height: 36px;
   float: right;
+}
+
+.footer-right-div > div:nth-child(1){
+  margin-right: 30px;
+}
+
+.footer-right-div > div:nth-child(3){
+  margin-left: 30px;
 }
 
 .row-fluid {
