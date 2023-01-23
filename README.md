@@ -7,7 +7,7 @@ docker image build -t header_footer .
 
 ### Создание и запуск контейнера
 ```bash
-docker container run --rm -p 8080:8080 header_footer
+docker run --rm -p 8080:80 header_footer
 ```
 
 ### Compiles and minifies for production

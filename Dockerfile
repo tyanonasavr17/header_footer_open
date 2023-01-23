@@ -1,4 +1,4 @@
-FROM node:14.4-alpine as development
+FROM node:19.4-alpine as development
 
 COPY package*.json ./
 
@@ -12,11 +12,9 @@ ARG BASE_URL=""
 
 RUN npm run build
 
-CMD npm run serve
+FROM nginx:1.23.3-alpine as production
 
-# FROM nginx:1.14-alpine as production
+WORKDIR /usr/share/nginx/html
 
-# WORKDIR /usr/share/nginx/html
-
-# COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-# COPY --from=builder /front/dist /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /dist /usr/share/nginx/html
