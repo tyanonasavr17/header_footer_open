@@ -1,0 +1,38 @@
+include:
+  - project: esd-mvd-ext/utility/auto-deployment
+    file: '/auto-deploy.gitlab-ci.yml'
+
+variables:
+  HEADER_FOOTER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  APP_NAME: header_footer
+  IMAGE_NAME: front
+
+stages:
+  - linter
+  - build
+  - deploy
+
+eslint:
+  image: node:19.4-alpine
+  stage: linter
+  before_script:
+    - npm install --save-dev eslint eslint-formatter-gitlab
+  script:
+    - npm ci
+    - npx eslint --format gitlab .
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
+
+build_image:
+  image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/docker:latest
+  stage: build
+  variables:
+    DOCKER_DRIVER: overlay2
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $HEADER_FOOTER_IMAGE --target=production .
+    - docker push $HEADER_FOOTER_IMAGE
+  after_script:
+    - docker logout || exit 0
