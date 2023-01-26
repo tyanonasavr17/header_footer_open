@@ -2,12 +2,12 @@
 
 ## Создание образа контейнера
 ```bash
-docker image build -t header_footer .
+docker-compose build
 ```
 
 ### Создание и запуск контейнера
 ```bash
-docker run --rm -p 8080:80 header_footer
+docker-compose up
 ```
 
 ### Compiles and minifies for production

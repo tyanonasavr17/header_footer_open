@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  front:
+    image: gitlab.akb-it.ru:4567/esd-mvd-ext/header_footer:master
+    restart: always
+    ports:
+      - 8080:80
