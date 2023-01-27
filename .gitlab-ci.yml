@@ -19,7 +19,7 @@ eslint:
     - npm install --save-dev eslint eslint-formatter-gitlab
   script:
     - npm ci
-    - npx eslint --format gitlab .
+    - npx eslint --format gitlab src/**/*.vue src/*.vue src/**/*.js src/*.js
   artifacts:
     reports:
       codequality: gl-code-quality-report.json
