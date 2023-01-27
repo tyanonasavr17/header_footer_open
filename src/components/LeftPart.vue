@@ -1,14 +1,16 @@
 <template>
-  <span class="eagles-logo"></span>
-  <span class="cifropol-logo"></span>
+  <div class="left-part clearfix">
+    <span class="eagles-logo"></span>
+    <span class="cifropol-logo"></span>
 
-  <span>
+    <span>
       <a :href="header_logo.url" class="brand-logo" :title="header_logo.title"></a>
   </span>
-  <hgroup>
-    <h1>МВД России</h1>
-    <h2>{{header_service_name}}</h2>
-  </hgroup>
+    <hgroup>
+      <h1>МВД России</h1>
+      <h2>{{ header_service_name }}</h2>
+    </hgroup>
+  </div>
 </template>
 
 <script>
@@ -27,6 +29,10 @@ export default {
 </script>
 
 <style scoped>
+.left-part {
+  float: left;
+}
+
 @font-face {
   font-family: PT Sans;
   src: url('@/fonts/PTSans-Regular.ttf');

@@ -1,11 +1,11 @@
 <template>
-  <header class="header">
+  <header class="header clearfix">
     <LeftPart :header_logo="example_header_data.logo" :header_service_name="example_header_data.service_name"/>
     <div v-if="example_header_data.right_part.some(item => item.title === 'График приёма')">
-      <Header :header_buttons="example_header_data.right_part" :is_ws="true"/>
+      <RightPart :header_buttons="example_header_data.right_part" :is_ws="true"/>
     </div>
     <div v-else-if="example_header_data.right_part.length > 0">
-      <Header :header_buttons="example_header_data.right_part" :is_ws="false"/>
+      <RightPart :header_buttons="example_header_data.right_part" :is_ws="false"/>
     </div>
     <div v-else>
     </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import RightPart from "./components/RightPart.vue";
 import LeftPart from "./components/LeftPart.vue";
 import Footer from "./components/Footer.vue";
 //import axios from 'axios'
@@ -47,7 +47,7 @@ export default {
     });
   },*/
   components: {
-    Header,
+    RightPart,
     LeftPart,
     Footer
   },
@@ -57,7 +57,7 @@ export default {
       logo: {url: "http://localhost:8080", title: "Главная страница"},
       service_name: "Сервис электронного документооборота",
       right_part: [
-        /**{type: "button", icon: "btn-user", url: "http://localhost:8080", title: "График приёма"},
+        {type: "button", icon: "btn-user", url: "http://localhost:8080", title: "График приёма"},
          {
             type: "button",
             icon: "btn-back-arrow",
@@ -73,9 +73,9 @@ export default {
          {type: "button", icon: "btn-calendar", url: "http://localhost:8080", title: "Календарь событий"},
          {type: "button", icon: "btn-cog", url: "http://localhost:8080", title: "Настройки"},
          {type: "profile", text: "Иванов И. И.", url: "http://localhost:8080", title: ""},
-         {type: "logout", icon: "btn-logout", url: "http://localhost:8080", title: "Выход", method: 'delete', name: 'Выйти из системы'}*/
-        {type: "extra_div", code: "Подать обращение в ЕЦЭ"},
-        {type: "button", icon: "btn-folder", url: "http://localhost:8080", title: "Архив долгосрочного хранения"},
+         {type: "logout", icon: "btn-logout", url: "http://localhost:8080", title: "Выход", method: 'delete', name: 'Выйти из системы'}
+        //{type: "extra_div", code: "Подать обращение в ЕЦЭ"},
+        /**{type: "button", icon: "btn-folder", url: "http://localhost:8080", title: "Архив долгосрочного хранения"},
         {type: "button", icon: "btn-home", url: "http://localhost:8080", title: "Рабочее место исполнителя"},
         {type: "messages", icon: "btn-message", url: "http://localhost:8080", title: "Беседы", message_new: true},
         {type: "profile", text: "Иванов И. И.", url: "http://localhost:8080", title: "Профиль"},
@@ -86,9 +86,9 @@ export default {
           title: "Выход",
           method: 'delete',
           name: 'Выйти из системы'
-        }
+        }*/
       ],
-      has_footer: true
+      has_footer: false
     }
   }),
 }
@@ -103,6 +103,12 @@ export default {
   max-width: 100%;
   top: 0;
   z-index: 150;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .wrapper {
