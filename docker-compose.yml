@@ -7,3 +7,11 @@ services:
       - 8080:80
     tty: true
     stdin_open: true
+networks:
+  default:
+    name: sed-network
+    ipam:
+      driver: default
+      config:
+        # 172.18 - по умолчанию, но пересекается с esd.rtech.ru
+        - subnet: "172.16.238.0/24"
