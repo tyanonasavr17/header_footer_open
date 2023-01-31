@@ -1,19 +1,26 @@
 <template>
   <header class="header clearfix">
-    <LeftPart :header_logo="example_header_data.logo" :header_service_name="example_header_data.service_name"/>
+    <LeftPart 
+      :header-logo="example_header_data.logo" 
+      :header-service-name="example_header_data.service_name" 
+    />
     <div v-if="example_header_data.right_part.some(item => item.title === 'График приёма')">
-      <RightPart :header_buttons="example_header_data.right_part" :is_ws="true"/>
+      <RightPart 
+        :header-buttons="example_header_data.right_part" 
+        :is-ws="true" 
+      />
     </div>
     <div v-else-if="example_header_data.right_part.length > 0">
-      <RightPart :header_buttons="example_header_data.right_part" :is_ws="false"/>
+      <RightPart 
+        :header-buttons="example_header_data.right_part" 
+        :is-ws="false" 
+      />
     </div>
-    <div v-else>
-    </div>
+    <div v-else />
   </header>
-  <div class="wrapper">
-  </div>
+  <div class="wrapper" />
   <div v-if="example_header_data.has_footer">
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -21,31 +28,8 @@
 import RightPart from "./components/RightPart.vue";
 import LeftPart from "./components/LeftPart.vue";
 import Footer from "./components/Footer.vue";
-//import axios from 'axios'
 
 export default {
-  /*created: async function () {
-    const url = "url микросервиса или монолита";
-    let Vue = require('vue');
-    new Vue({
-      el: '#app',
-      data () {
-        return {
-          header_data: []
-        }
-
-      },
-
-      mounted() {
-
-        axios.get(url).then(response => {
-
-          this.header_data = response.data
-
-        })
-      }
-    });
-  },*/
   components: {
     RightPart,
     LeftPart,
@@ -54,7 +38,7 @@ export default {
   data: () => ({
     //header_data: null,
     example_header_data: {
-      logo: {url: "http://localhost:8080", title: "Главная страница"},
+      logo: { url: "http://localhost:8080", title: "Главная страница" },
       service_name: "Сервис электронного документооборота",
       right_part: [
         /**{type: "button", icon: "btn-user", url: "http://localhost:8080", title: "График приёма"},
@@ -75,10 +59,10 @@ export default {
          {type: "profile", text: "Иванов И. И.", url: "http://localhost:8080", title: ""},
          {type: "logout", icon: "btn-logout", url: "http://localhost:8080", title: "Выход", method: 'delete', name: 'Выйти из системы'}*/
         //{type: "extra_div", code: "Подать обращение в ЕЦЭ"},
-        {type: "button", icon: "btn-folder", url: "http://localhost:8080", title: "Архив долгосрочного хранения"},
-        {type: "button", icon: "btn-home", url: "http://localhost:8080", title: "Рабочее место исполнителя"},
-        {type: "messages", icon: "btn-message", url: "http://localhost:8080", title: "Беседы", message_new: true},
-        {type: "profile", text: "Иванов И. И.", url: "http://localhost:8080", title: "Профиль"},
+        { type: "button", icon: "btn-folder", url: "http://localhost:8080", title: "Архив долгосрочного хранения" },
+        { type: "button", icon: "btn-home", url: "http://localhost:8080", title: "Рабочее место исполнителя" },
+        { type: "messages", icon: "btn-message", url: "http://localhost:8080", title: "Беседы", message_new: true },
+        { type: "profile", text: "Иванов И. И.", url: "http://localhost:8080", title: "Профиль" },
         {
           type: "logout",
           icon: "btn-logout",

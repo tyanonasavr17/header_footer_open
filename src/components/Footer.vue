@@ -1,5 +1,8 @@
 <template>
-  <footer id="footer" class="footer">
+  <footer
+    id="footer"
+    class="footer"
+  >
     <div class="container">
       <div class="row-fluid">
         <div class="span6">
@@ -11,7 +14,7 @@
               Круглосуточная служба поддержки ЕЦЭ ИСОД МВД России<br>
               8 (800) 2000-462 (звонок бесплатный), 8 (495) 667-67-17
             </div>
-            <div class="divider"></div>
+            <div class="divider" />
             <div>
               <a href="https://it.mvd.ru/profile/requests/new">helpdesk@mvd.ru</a>
               <br>
@@ -31,7 +34,7 @@ export default {}
 <style scoped>
 @font-face {
   font-family: PT Sans;
-  src: url('@/fonts/PTSans-Regular.ttf');
+  src: url('../fonts/PTSans-Regular.ttf');
 }
 
 .footer {
@@ -64,11 +67,11 @@ export default {}
   float: right;
 }
 
-.footer-right-div > div:nth-child(1){
+.footer-right-div>div:nth-child(1) {
   margin-right: 30px;
 }
 
-.footer-right-div > div:nth-child(3){
+.footer-right-div>div:nth-child(3) {
   margin-left: 30px;
 }
 
@@ -76,7 +79,8 @@ export default {}
   width: 100%;
 }
 
-.row-fluid::before, .row-fluid::after {
+.row-fluid::before,
+.row-fluid::after {
   display: table;
   line-height: 0;
   content: "";

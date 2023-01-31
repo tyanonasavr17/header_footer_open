@@ -1,13 +1,21 @@
 <template>
   <div class="right-part">
     <span>
-      <a v-for="button in header_buttons" :key="button" :href="button.url"
-         v-bind:class="[button.type === 'profile' ? 'avatar-section' : ['header-btn', button.icon], 'btn-with-border']"
-         :title="button.title" v-bind:name="[button.type ==='logout' ? button.name : '']"
-         :data-method="button.type ==='logout' ? button.method : ''">
-        <div v-if="button.message_new" class="header message-new"></div>
+      <a
+        v-for="button in headerButtons"
+        :key="button"
+        :href="button.url"
+        :class="[button.type === 'profile' ? 'avatar-section' : ['header-btn', button.icon], 'btn-with-border']"
+        :title="button.title"
+        :name="[button.type ==='logout' ? button.name : '']"
+        :data-method="button.type ==='logout' ? button.method : ''"
+      >
+        <div
+          v-if="button.message_new"
+          class="header message-new"
+        />
         <template v-if="button.type === 'profile'">
-          <img src="@/assets/main/avatar.svg"/>
+          <img src="../assets/main/avatar.svg">
           <span class="span name">{{ button.text }}</span>
         </template>
         <template v-if="button.type === 'extra_div'"> <!-- тут будет код блока для ВИСПа -->
@@ -23,10 +31,11 @@
 <script>
 export default {
   props: {
-    header_buttons: {
-      type: Array
+    headerButtons: {
+      type: Array,
+      required: true
     },
-    is_ws: Boolean
+    isWs: Boolean
   }
 }
 </script>
@@ -44,7 +53,7 @@ export default {
 
 @font-face {
   font-family: PT Sans;
-  src: url('@/fonts/PTSans-Regular.ttf');
+  src: url('../fonts/PTSans-Regular.ttf');
 }
 
 svg {
@@ -87,11 +96,11 @@ a {
 }
 
 .btn-home {
-  background: url('@/assets/main/home.svg') no-repeat center;
+  background: url('../assets/main/home.svg') no-repeat center;
 }
 
 .btn-logout {
-  background: url('@/assets/main/exit-door.svg') no-repeat center;
+  background: url('../assets/main/exit-door.svg') no-repeat center;
 }
 
 .btn-with-border {
@@ -103,11 +112,11 @@ hgroup {
 }
 
 .btn-folder {
-  background: url('@/assets/main/folder.svg') no-repeat center;
+  background: url('../assets/main/folder.svg') no-repeat center;
 }
 
 .btn-message {
-  background: url('@/assets/main/message.svg') no-repeat center;
+  background: url('../assets/main/message.svg') no-repeat center;
 }
 
 .message-new {
@@ -127,39 +136,39 @@ hgroup {
 }
 
 .btn-user {
-  background: url('@/assets/ws/user.svg') no-repeat center;
+  background: url('../assets/ws/user.svg') no-repeat center;
 }
 
 .btn-back-arrow {
-  background: url('@/assets/ws/back-arrow.svg') no-repeat center;
+  background: url('../assets/ws/back-arrow.svg') no-repeat center;
 }
 
 .btn-stack {
-  background: url('@/assets/ws/stack.svg') no-repeat center;
+  background: url('../assets/ws/stack.svg') no-repeat center;
 }
 
 .btn-star {
-  background: url('@/assets/ws/star.svg') no-repeat center;
+  background: url('../assets/ws/star.svg') no-repeat center;
 }
 
 .btn-wrench {
-  background: url('@/assets/ws/wrench.svg') no-repeat center;
+  background: url('../assets/ws/wrench.svg') no-repeat center;
 }
 
 .btn-sort {
-  background: url('@/assets/ws/sort.svg') no-repeat center;
+  background: url('../assets/ws/sort.svg') no-repeat center;
 }
 
 .btn-time {
-  background: url('@/assets/ws/time.svg') no-repeat center;
+  background: url('../assets/ws/time.svg') no-repeat center;
 }
 
 .btn-calendar {
-  background: url('@/assets/ws/calendar.svg') no-repeat center;
+  background: url('../assets/ws/calendar.svg') no-repeat center;
 }
 
 .btn-cog {
-  background: url('@/assets/ws/cog.svg') no-repeat center;
+  background: url('../assets/ws/cog.svg') no-repeat center;
 }
 
 @media screen and (max-width: 985px) {

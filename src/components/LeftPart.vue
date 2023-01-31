@@ -1,14 +1,18 @@
 <template>
   <div class="left-part clearfix">
-    <span class="eagles-logo"></span>
-    <span class="cifropol-logo"></span>
+    <span class="eagles-logo" />
+    <span class="cifropol-logo" />
 
     <span>
-      <a :href="header_logo.url" class="brand-logo" :title="header_logo.title"></a>
-  </span>
+      <a
+        :href="headerLogo.url"
+        class="brand-logo"
+        :title="headerLogo.title"
+      />
+    </span>
     <hgroup>
       <h1>МВД России</h1>
-      <h2>{{ header_service_name }}</h2>
+      <h2>{{ headerServiceName }}</h2>
     </hgroup>
   </div>
 </template>
@@ -17,11 +21,13 @@
 
 export default {
   props: {
-    header_logo: {
-      type: Object
+    headerLogo: {
+      type: Object,
+      required: true
     },
-    header_service_name: {
-      type: String
+    headerServiceName: {
+      type: String,
+      required: true
     }
   }
 }
@@ -35,11 +41,11 @@ export default {
 
 @font-face {
   font-family: PT Sans;
-  src: url('@/fonts/PTSans-Regular.ttf');
+  src: url('../fonts/PTSans-Regular.ttf');
 }
 
 .eagles-logo {
-  background: url('@/assets/main/eagles.png') no-repeat center;
+  background: url('../assets/main/eagles.png') no-repeat center;
   display: block;
   height: 60px;
   left: 63.5px;
@@ -48,7 +54,7 @@ export default {
 }
 
 .cifropol-logo {
-  background: url('@/assets/main/cifropol.svg') no-repeat center;
+  background: url('../assets/main/cifropol.svg') no-repeat center;
   display: block;
   height: 26px;
   left: 48px;
@@ -58,7 +64,7 @@ export default {
 }
 
 .brand-logo {
-  background: url('@/assets/main/logo.png') no-repeat center;
+  background: url('../assets/main/logo.png') no-repeat center;
   display: block;
   height: 38.33px;
   left: 180px;
