@@ -41,7 +41,7 @@ export default {
   }),
   created: async function () {
     if (!this.$root.$data) {
-      console.error('Осутсвуют данные')
+      console.error('Отсутствуют данные')
     }
     this.example_header_data = this.$root.$data.fields || '';
   }
