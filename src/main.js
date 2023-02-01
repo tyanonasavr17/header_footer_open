@@ -9,20 +9,17 @@ const HeaderFooter = createApp({
       service_name: "Сервис электронного документооборота",
       right_part: [
         {
-          type: "button",
-          icon: "btn-folder",
+          type: "folder",
           url: "http://localhost:8080",
           title: "Архив долгосрочного хранения",
         },
         {
-          type: "button",
-          icon: "btn-home",
+          type: "home",
           url: "http://localhost:8080",
           title: "Рабочее место исполнителя",
         },
         {
-          type: "messages",
-          icon: "btn-message",
+          type: "message",
           url: "http://localhost:8080",
           title: "Беседы",
           message_new: true,
@@ -35,7 +32,6 @@ const HeaderFooter = createApp({
         },
         {
           type: "logout",
-          icon: "btn-logout",
           url: "http://localhost:8080",
           title: "Выход",
           method: "delete",
