@@ -31,19 +31,19 @@ import Footer from "./components/Footer.vue";
 
 export default {
   name: 'App',
+  components: {
+    RightPart,
+    LeftPart,
+    Footer
+  },
+  data: () => ({
+    example_header_data: null
+  }),
   created: async function () {
     if (!this.$root.$data) {
       console.error('Осутсвуют данные')
     }
     this.example_header_data = this.$root.$data.fields || '';
-  },
-  data: () => ({
-    example_header_data: null
-  }),
-  components: {
-    RightPart,
-    LeftPart,
-    Footer
   }
 }
 </script>
