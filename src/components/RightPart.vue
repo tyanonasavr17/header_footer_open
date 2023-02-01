@@ -1,3 +1,7 @@
+
+<script setup>
+import Avatar from '../assets/ws/avatar.svg'
+</script>
 <template>
   <div class="right-part">
     <span>
@@ -15,7 +19,7 @@
           class="header message-new"
         />
         <template v-if="button.type === 'profile'">
-          <img src="../assets/main/avatar.svg">
+          <div><Avatar class="avatar"/></div>
           <span class="span name">{{ button.text }}</span>
         </template>
         <template v-if="button.type === 'extra_div'"> <!-- тут будет код блока для ВИСПа -->
@@ -100,6 +104,7 @@ a {
 }
 
 .btn-logout {
+  /* sadlj */
   background: url('../assets/main/exit-door.svg') no-repeat center;
 }
 

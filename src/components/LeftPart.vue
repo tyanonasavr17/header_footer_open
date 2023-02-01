@@ -1,7 +1,10 @@
+<script setup>
+import Cifropol from '../assets/main/cifropol.svg'
+</script>
 <template>
   <div class="left-part clearfix">
     <span class="eagles-logo" />
-    <span class="cifropol-logo" />
+    <span class="cifropol-logo"><Cifropol /></span>
 
     <span>
       <a
@@ -54,7 +57,6 @@ export default {
 }
 
 .cifropol-logo {
-  background: url('../assets/main/cifropol.svg') no-repeat center;
   display: block;
   height: 26px;
   left: 48px;
