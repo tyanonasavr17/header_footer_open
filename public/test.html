@@ -26,14 +26,16 @@
         rawFile.send(null);
       }
 
+      const service = "http://localhost:8080/";
+
       readTextFile("/manifest.json", function (text) {
         var data = JSON.parse(text);
         document
           .getElementById("headscript")
-          .setAttribute("src", data["index.html"]["file"]);
+          .setAttribute("src", service + data["index.html"]["file"]);
         document
           .getElementById("headcss")
-          .setAttribute("href", data["index.css"]["file"]);
+          .setAttribute("href", service + data["index.css"]["file"]);
       });
     </script>
   </body>
