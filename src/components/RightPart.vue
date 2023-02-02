@@ -1,79 +1,58 @@
+
+<script setup>
+import Avatar from '../assets/ws/avatar.svg'
+import ExitDoor from "../assets/main/exit-door.svg";
+function getClassByButton(button) {
+  const Types = {
+    profile: ["avatar-section", "btn-with-border"],
+    button: ["header-btn", button.icon, "btn-with-border"],
+    messages: ["header-btn", button.icon, "btn-with-border"],
+    logout: ["header-btn", "btn-with-border"]
+  };
+  return Types[button.type];
+}
+</script>
 <template>
   <div class="right-part">
     <span>
-      <TagsByButtonType :header-buttons="headerButtons" />
+      <a
+        v-for="button in headerButtons"
+        :key="button"
+        :href="button.url"
+        :class="getClassByButton(button)"
+        :title="button.title"
+        :name="[button.type ==='logout' ? button.name : '']"
+        :data-method="button.type ==='logout' ? button.method : ''"
+      >
+        <div v-if="button.type === 'logout'"><ExitDoor /></div>
+        <div
+          v-if="button.message_new"
+          class="header message-new"
+        />
+        <template v-if="button.type === 'profile'">
+          <div><Avatar class="avatar" /></div>
+          <div class="span name">{{ button.text }}</div>
+        </template>
+        <template v-if="button.type === 'extra_div'"> <!-- тут будет код блока для ВИСПа -->
+          <div>
+            {{ button.code }}
+          </div>
+        </template>
+      </a>
     </span>
   </div>
 </template>
+
 <script>
-import Avatar from "../assets/ws/avatar.svg";
-import Home from "../assets/main/home.svg";
-import Folder from "../assets/main/folder.svg";
-import Message from "../assets/main/message.svg";
-import ExitDoor from "../assets/main/exit-door.svg";
-
-import { h } from "vue";
-
-function getClassByButtonType(type) {
-  const Types = {
-    profile: ["avatar-section", "btn-with-border"],
-    folder: ["header-btn", "btn-with-border"],
-    home: ["header-btn", "btn-with-border"],
-    message: ["header-btn", "btn-with-border"],
-    logout: ["header-btn", "btn-with-border"]
-  };
-  return Types[type];
-}
-function getTagByButtonType(type) {
-  const Tags = {
-    profile: Avatar,
-    folder: Folder,
-    home: Home,
-    message: Message,
-    logout: ExitDoor,
-    extra_div: "extra_div",
-  };
-
-  return Tags[type];
-}
-
-const TagsByButtonType = {
-  props: ["headerButtons"],
-  render() {
-    return this.headerButtons.map((button) => {
-      return h(
-        "a",
-        {
-          key: button,
-          href: button.url,
-          class: ["svg", getClassByButtonType(button.type)],
-          title: button.title,
-          name: [button.type === "logout" ? button.name : ""],
-          "data-method": button.type === "logout" ? button.method : "",
-        },
-        [
-          button.message_new ? h("div", { class: "header message-new" }) : null,
-          h("div", [h(getTagByButtonType(button.type), { class: button.type === 'profile' ? "img" : null})]) ,
-          button.type === 'profile' ? h("span", { class: "span name" }, [button.text]) : null,
-        ]
-      );
-    });
-  },
-};
-
 export default {
-  name: "RightPart",
-  components: {
-    TagsByButtonType,
-  },
   props: {
     headerButtons: {
       type: Array,
-      required: true,
+      required: true
     },
-    isWs: Boolean,
-  },
-};
+    isWs: Boolean
+  }
+}
 </script>
 
 <style scoped>
@@ -89,10 +68,10 @@ export default {
 
 @font-face {
   font-family: PT Sans;
-  src: url("../fonts/PTSans-Regular.ttf");
+  src: url('../fonts/PTSans-Regular.ttf');
 }
 
-.svg {
+svg {
   width: 100%;
 }
 
@@ -113,9 +92,10 @@ export default {
   padding-left: 2px;
 }
 
-img {
+.avatar {
   margin-left: 11px;
   margin-top: 5px;
+  display: inline-block;
 }
 
 a {
@@ -126,17 +106,29 @@ a {
 }
 
 .header-btn {
-  height: 60px !important;
-  width: 60px !important;
-  display: inline-block !important;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+}
+
+.btn-home {
+  background: url('../assets/main/home.svg') no-repeat center;
 }
 
 .btn-with-border {
-  border-left: 1px solid rgba(245, 245, 245, 0.5);
+  border-left: 1px solid rgba(245, 245, 245, .5);
 }
 
 hgroup {
   padding-top: 13px;
+}
+
+.btn-folder {
+  background: url('../assets/main/folder.svg') no-repeat center;
+}
+
+.btn-message {
+  background: url('../assets/main/message.svg') no-repeat center;
 }
 
 .message-new {
@@ -156,39 +148,39 @@ hgroup {
 }
 
 .btn-user {
-  background: url("../assets/ws/user.svg") no-repeat center;
+  background: url('../assets/ws/user.svg') no-repeat center;
 }
 
 .btn-back-arrow {
-  background: url("../assets/ws/back-arrow.svg") no-repeat center;
+  background: url('../assets/ws/back-arrow.svg') no-repeat center;
 }
 
 .btn-stack {
-  background: url("../assets/ws/stack.svg") no-repeat center;
+  background: url('../assets/ws/stack.svg') no-repeat center;
 }
 
 .btn-star {
-  background: url("../assets/ws/star.svg") no-repeat center;
+  background: url('../assets/ws/star.svg') no-repeat center;
 }
 
 .btn-wrench {
-  background: url("../assets/ws/wrench.svg") no-repeat center;
+  background: url('../assets/ws/wrench.svg') no-repeat center;
 }
 
 .btn-sort {
-  background: url("../assets/ws/sort.svg") no-repeat center;
+  background: url('../assets/ws/sort.svg') no-repeat center;
 }
 
 .btn-time {
-  background: url("../assets/ws/time.svg") no-repeat center;
+  background: url('../assets/ws/time.svg') no-repeat center;
 }
 
 .btn-calendar {
-  background: url("../assets/ws/calendar.svg") no-repeat center;
+  background: url('../assets/ws/calendar.svg') no-repeat center;
 }
 
 .btn-cog {
-  background: url("../assets/ws/cog.svg") no-repeat center;
+  background: url('../assets/ws/cog.svg') no-repeat center;
 }
 
 @media screen and (max-width: 985px) {
@@ -202,4 +194,5 @@ hgroup {
     display: none;
   }
 }
+
 </style>
