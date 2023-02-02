@@ -1,6 +1,8 @@
 <script setup>
+import defaultButton from "./RightButtons/defaultButton.vue";
+import Message from "./RightButtons/Message.vue";
+import vispCustom from "./RightButtons/vispCustom.vue";
 import Profile from "./RightButtons/Profile.vue";
-import Deprecated from "./RightButtons/Deprecated.vue";
 import Logout from "./RightButtons/Logout.vue"
 </script>
 
@@ -23,17 +25,25 @@ import Logout from "./RightButtons/Logout.vue"
           :name="button.text"
         />
       </span>
+      <span v-else-if="button.type == 'message'">
+        <Message
+          :url="button.url"
+          :message_new="button.message_new"
+          :title="button.title"
+        />
+      </span>
+      <span v-else-if="button.type == 'extra_div'">
+        <vispCustom
+          :url="button.url"
+          :message_new="button.message_new"
+          :title="button.title"
+        />
+      </span>
       <span v-else>
-        <Deprecated
+        <defaultButton
           :url="button.url"
           :icon="button.icon"
-          :type="button.type"
-          :name="button.name"
-          :message_new="button.message_new"
-          :code="button.code"
-          :text="button.text"
           :title="button.title"
-          :method="button.method"
         />
       </span>
     </div>
@@ -44,8 +54,12 @@ import Logout from "./RightButtons/Logout.vue"
 
 function ComponentByType(type) {
   const Types = {
+    message: Message,
+    'extra_div': vispCustom,
     profile: Profile,
+    logout: Logout,
   }
+  return Types[type]
 }
 
 export default {

@@ -21,7 +21,7 @@ const HeaderFooter = createApp({
           title: "Рабочее место исполнителя",
         },
         {
-          type: "messages",
+          type: "message",
           icon: "btn-message",
           url: "http://localhost:8080",
           title: "Беседы",

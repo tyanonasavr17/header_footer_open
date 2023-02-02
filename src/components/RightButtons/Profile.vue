@@ -1,5 +1,5 @@
 <script setup>
-import Avatar from "../../assets/ws/avatar.svg";
+  import Avatar from "../../assets/ws/avatar.svg";
 </script>
 
 <template>
