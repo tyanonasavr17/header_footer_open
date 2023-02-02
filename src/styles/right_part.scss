@@ -1,6 +1,6 @@
 @font-face {
   font-family: "PTSans-Regular"; /* Имя шрифта */
-  src: url("../fonts/PTSans-Regular.ttf"); /* Путь к файлу со шрифтом */
+  src: url("/src/fonts/PTSans-Regular.ttf"); /* Путь к файлу со шрифтом */
 }
 
 $header-backgroud-color: #1d6da8;
@@ -126,7 +126,7 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
   }
 
   .btn-home {
-    background: url("../assets/main/home.svg") no-repeat center;
+    background: url("/src/assets/main/home.svg") no-repeat center;
     right: 303px;
   }
 
@@ -136,12 +136,12 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
   }
 
   .btn-folder {
-    background: url("../assets/main/folder.svg") no-repeat center;
+    background: url("/src/assets/main/folder.svg") no-repeat center;
     right: 364px;
   }
 
   .btn-message {
-    background: url("../assets/main/message.svg") no-repeat center;
+    background: url("/src/assets/main/message.svg") no-repeat center;
     right: 242px;
   }
 
@@ -162,39 +162,39 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
   }
 
   .btn-user {
-    background: url("../assets/ws/user.svg") no-repeat center;
+    background: url("/src/assets/ws/user.svg") no-repeat center;
   }
 
   .btn-back-arrow {
-    background: url("../assets/ws/back-arrow.svg") no-repeat center;
+    background: url("/src/assets/ws/back-arrow.svg") no-repeat center;
   }
 
   .btn-stack {
-    background: url("../assets/ws/stack.svg") no-repeat center;
+    background: url("/src/assets/ws/stack.svg") no-repeat center;
   }
 
   .btn-star {
-    background: url("../assets/ws/star.svg") no-repeat center;
+    background: url("/src/assets/ws/star.svg") no-repeat center;
   }
 
   .btn-wrench {
-    background: url("../assets/ws/wrench.svg") no-repeat center;
+    background: url("/src/assets/ws/wrench.svg") no-repeat center;
   }
 
   .btn-sort {
-    background: url("../assets/ws/sort.svg") no-repeat center;
+    background: url("/src/assets/ws/sort.svg") no-repeat center;
   }
 
   .btn-time {
-    background: url("../assets/ws/time.svg") no-repeat center;
+    background: url("/src/assets/ws/time.svg") no-repeat center;
   }
 
   .btn-calendar {
-    background: url("../assets/ws/calendar.svg") no-repeat center;
+    background: url("/src/assets/ws/calendar.svg") no-repeat center;
   }
 
   .btn-cog {
-    background: url("../assets/ws/cog.svg") no-repeat center;
+    background: url("/src/assets/ws/cog.svg") no-repeat center;
   }
 }
 
