@@ -55,6 +55,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
   @import "../styles/right_part.scss";
 </style>
