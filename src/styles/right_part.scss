@@ -23,8 +23,39 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
 
   a {
     svg {
-      text-align: center;
     }
+  }
+
+  .section {
+    border-left: 1px solid $header-btn-border-color;
+    height: 100%;
+    display: inline-block;
+  }
+  .avatar {
+    margin-left: 11px;
+    margin-top: 5px;
+  }
+
+  .name {
+    vertical-align: top;
+    margin-top: 21px;
+    color: #fafbfc;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    max-height: 30px;
+    overflow: hidden;
+    padding-left: 2px;
+  }
+
+  .logout-block {
+    width: 60px;
+    display: inline-block;
+  }
+
+  .icon {
+    margin-left: 11px;
+    margin-top: 5px;
   }
 
   h1 {
@@ -98,7 +129,9 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
     background: url("../assets/main/home.svg") no-repeat center;
     right: 303px;
   }
+
   .btn-logout {
+    text-align: center;
     right: 0;
   }
 

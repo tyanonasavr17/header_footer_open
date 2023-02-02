@@ -27,5 +27,5 @@ export default defineConfig({
   },
 });
 svgLoader({
-  defaultImport: "raw"
+  defaultImport: "raw",
 });

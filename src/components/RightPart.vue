@@ -1,60 +1,63 @@
-
 <script setup>
-import Avatar from '../assets/ws/avatar.svg'
-import ExitDoor from "../assets/main/exit-door.svg";
-function getClassByButton(button) {
-  const Types = {
-    profile: ["avatar-section", "btn-with-border"],
-    button: ["header-btn", button.icon, "btn-with-border"],
-    messages: ["header-btn", button.icon, "btn-with-border"],
-    logout: ["header-btn", "btn-logout", "btn-with-border"]
-  };
-  return Types[button.type];
-}
+import Profile from "./RightButtons/Profile.vue";
+import Deprecated from "./RightButtons/Deprecated.vue";
+import Logout from "./RightButtons/Logout.vue"
 </script>
+
 <template>
   <div class="right-part">
-    <span>
-      <a
-        v-for="button in headerButtons"
-        :key="button"
-        :href="button.url"
-        :class="getClassByButton(button)"
-        :title="button.title"
-        :name="[button.type ==='logout' ? button.name : '']"
-        :data-method="button.type ==='logout' ? button.method : ''"
-      >
-        <template v-if="button.type === 'logout'"><ExitDoor class="svg" /></template>
-        <div
-          v-if="button.message_new"
-          class="message-new"
+    <div
+      v-for="button in headerButtons"
+      :key="button"
+      class="section"
+    >
+      <span v-if="button.type == 'profile'">
+        <Profile
+          :url="button.url"
+          :name="button.text"
         />
-        <template v-if="button.type === 'profile'">
-          <Avatar class="avatar svg" />
-          <span>{{ button.text }}</span>
-        </template>
-        <template v-if="button.type === 'extra_div'"> <!-- тут будет код блока для ВИСПа -->
-          <div>
-            {{ button.code }}
-          </div>
-        </template>
-      </a>
-    </span>
+      </span>
+      <span v-else-if="button.type == 'logout'">
+        <Logout
+          :url="button.url"
+          :name="button.text"
+        />
+      </span>
+      <span v-else>
+        <Deprecated
+          :url="button.url"
+          :icon="button.icon"
+          :type="button.type"
+          :name="button.name"
+          :message_new="button.message_new"
+          :code="button.code"
+          :text="button.text"
+          :title="button.title"
+          :method="button.method"
+        />
+      </span>
+    </div>
   </div>
 </template>
 
 <script>
+
+function ComponentByType(type) {
+  const Types = {
+    profile: Profile,
+  }
+}
+
 export default {
   props: {
     headerButtons: {
       type: Array,
       required: true
-    },
-    isWs: Boolean
+    }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  @import "../styles/right_part.scss";
+  @import "src/styles/right_part.scss";
 </style>
