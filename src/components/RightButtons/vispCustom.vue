@@ -14,7 +14,24 @@
 
 <script>
 export default {
-  props: ['url', 'icon', 'code', 'title']
+  props: {
+    url: {
+      type: String,
+      required: true,
+    },
+    icon: {
+      type: String,
+      required: true,
+    },
+    code: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 <style scoped lang="scss">

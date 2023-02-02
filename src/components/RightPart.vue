@@ -1,9 +1,9 @@
 <script setup>
-import defaultButton from "./RightButtons/defaultButton.vue";
-import Message from "./RightButtons/Message.vue";
-import vispCustom from "./RightButtons/vispCustom.vue";
-import Profile from "./RightButtons/Profile.vue";
-import Logout from "./RightButtons/Logout.vue"
+import defaultButton from "/src/components/RightButtons/defaultButton.vue";
+import Message from "/src/components/RightButtons/Message.vue";
+import vispCustom from "/src/components/RightButtons/vispCustom.vue";
+import Profile from "/src/components/RightButtons/Profile.vue";
+import Logout from "/src/components/RightButtons/Logout.vue"
 </script>
 
 <template>
@@ -23,19 +23,22 @@ import Logout from "./RightButtons/Logout.vue"
         <Logout
           :url="button.url"
           :name="button.text"
+          :title="button.title"
+          :method="button.method"
         />
       </span>
       <span v-else-if="button.type == 'message'">
         <Message
           :url="button.url"
-          :message_new="button.message_new"
+          :message-new="button.message_new"
           :title="button.title"
         />
       </span>
       <span v-else-if="button.type == 'extra_div'">
         <vispCustom
           :url="button.url"
-          :message_new="button.message_new"
+          :icon="button.icon"
+          :code="button.code"
           :title="button.title"
         />
       </span>

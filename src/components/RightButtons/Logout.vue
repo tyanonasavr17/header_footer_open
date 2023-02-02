@@ -1,5 +1,5 @@
 <script setup>
-  import ExitDoorSvg from "/src/assets/main/exit-door.svg";
+import ExitDoorSvg from "/src/assets/main/exit-door.svg";
 </script>
 
 <template>
@@ -14,12 +14,28 @@
   </a>
 </template>
 
-
 <script>
 export default {
-  props: ['url', 'name', 'method', 'title']
-}
+  props: {
+    url: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    method: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-  @import "src/styles/right_part.scss";
+@import "src/styles/right_part.scss";
 </style>

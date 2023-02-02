@@ -1,5 +1,5 @@
 <script setup>
-  import Avatar from "../../assets/ws/avatar.svg";
+import Avatar from "/src/assets/ws/avatar.svg";
 </script>
 
 <template>
@@ -13,12 +13,20 @@
   </a>
 </template>
 
-
 <script>
 export default {
-  props: ['url', 'name']
-}
+  props: {
+    url: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-  @import "src/styles/right_part.scss";
+@import "src/styles/right_part.scss";
 </style>
