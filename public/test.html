@@ -10,11 +10,9 @@
   <body style="height: 100%">
     <div id="app"></div>
 
-    <!-- Пример! Контейнер для js -->
-    <script id="headscript"></script>
     <!-- Загрузка js/css из manifest.json -->
     <script>
-      function readTextFile(file, callback) {
+      function fetchFile(file, callback) {
         var rawFile = new XMLHttpRequest();
         rawFile.overrideMimeType("application/json");
         rawFile.open("GET", file, true);
@@ -26,17 +24,33 @@
         rawFile.send(null);
       }
 
-      const service = "http://localhost:8080/";
-
-      readTextFile("/manifest.json", function (text) {
-        var data = JSON.parse(text);
-        document
-          .getElementById("headscript")
-          .setAttribute("src", service + data["index.html"]["file"]);
+      function loadWidgetsSources(manifestText) {
+        const service = "http://localhost:8080/";
+        var data = JSON.parse(manifestText);
+        loadScript(service + data["index.html"]["file"], createWidgets)
         document
           .getElementById("headcss")
           .setAttribute("href", service + data["index.css"]["file"]);
-      });
+      }
+
+      function loadScript(file, successCallback) {
+        var script = document.createElement('script');
+        script.src = file;
+        script.onload = successCallback;
+        script.onerror = function() { logLoadError(file); }
+        document.body.appendChild(script);
+      }
+
+      function createWidgets() {
+        console.log(HeaderFooter)
+      }
+
+      function logLoadError(file) {
+        console.log( "Failed to load resource " + file + "!");
+      }
+
+      fetchFile("/manifest.json", loadWidgetsSources);
+
     </script>
   </body>
 </html>
