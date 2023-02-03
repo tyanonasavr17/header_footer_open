@@ -25,7 +25,7 @@
     <div class="wrapper"></div>
     <div id="footer"></div>
 
-    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/main.js" onload="createWidgets()" onerror="logLoadError(this.src)"></script>
     <script>
       function createWidgets() {
         headerData = {
@@ -64,7 +64,7 @@
                 url: "#",
                 title: "Выход",
                 method: "delete",
-                name: "Выйти из системы",
+                text: "Выйти из системы",
               },
             ]
           },
@@ -80,8 +80,10 @@
       }
 
       const script = document.querySelector("script[type=module]")
-      script.onload = createWidgets;
-      script.onerror = function() { logLoadError(script.src); }
+      if (!script.src.includes("/@vite/client")) {
+        script.onload = createWidgets;
+        script.onerror = function() { logLoadError(script.src); }
+      }
     </script>
   </body>
 </html>
