@@ -6,6 +6,7 @@
   >
     <div
       v-if="messageNew"
+      id="newMessageIcon"
       class="header message-new"
     />
   </a>
@@ -42,5 +43,6 @@ export default {
   position: relative;
   top: 15px;
   width: 8px;
+  visibility: hidden;
 }
 </style>

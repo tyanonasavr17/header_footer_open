@@ -14,13 +14,18 @@
         flex-direction: column;
       }
       .wrapper {
+        text-align: center;
         flex-grow: 1;
       }
     </style>
   </head>
   <body class="content">
     <div id="header"></div>
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <button type="button" onclick="newMessageIndicator()">
+        Индикатор новых сообщений в беседах
+      </button>
+    </div>
     <div id="footer"></div>
 
     <!-- Загрузка js/css из manifest.json -->

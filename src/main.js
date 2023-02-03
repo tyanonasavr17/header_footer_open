@@ -9,10 +9,10 @@ window.createHeader = ({ data = {}, element = null } = {}) => {
   }
 
   createApp({
-    data: () => (data),
-    render: () => h(Header)}
-  ).mount(element);
-}
+    data: () => data,
+    render: () => h(Header),
+  }).mount(element);
+};
 
 window.createFooter = ({ element = null } = {}) => {
   if (element == null) {
@@ -20,5 +20,14 @@ window.createFooter = ({ element = null } = {}) => {
     return;
   }
 
-  createApp({render: () => h(Footer)}).mount(element);
-}
+  createApp({ render: () => h(Footer) }).mount(element);
+};
+
+window.newMessageIndicator = () => {
+  var icon = document.getElementById("newMessageIcon");
+  if (icon.style.visibility == "visible") {
+    icon.style.visibility = "hidden";
+  } else {
+    icon.style.visibility = "visible";
+  }
+};
