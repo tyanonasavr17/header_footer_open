@@ -7,14 +7,20 @@
     <!-- Пример! Контейнер для стилей -->
     <link id="headcss" rel="stylesheet" />
     <style type="text/css">
-      .wrapper {
-        height: 92vh;
+      body {
+        margin: auto;
+      }
+      .content {
+        height: 100vh;
         display: flex;
         flex-direction: column;
       }
+      .wrapper {
+        flex-grow: 1;
+      }
     </style>
   </head>
-  <body style="height: 100%">
+  <body class="content">
     <div id="header"></div>
     <div class="wrapper"></div>
     <div id="footer"></div>
@@ -55,48 +61,50 @@
       }
 
       function createWidgets() {
-        headerData = {
-          fields: {
-            logo: { url: "http://localhost:8080", title: "Главная страница" },
-            service_name: "Сервис электронного документооборота",
-            right_part: [
-              {
-                type: "button",
-                icon: "btn-folder",
-                url: "http://localhost:8080",
-                title: "Архив долгосрочного хранения",
-              },
-              {
-                type: "button",
-                icon: "btn-home",
-                url: "http://localhost:8080",
-                title: "Рабочее место исполнителя",
-              },
-              {
-                type: "messages",
-                icon: "btn-message",
-                url: "http://localhost:8080",
-                title: "Беседы",
-                message_new: true,
-              },
-              {
-                type: "profile",
-                text: "Иванов И. И.",
-                url: "http://localhost:8080",
-                title: "Профиль",
-              },
-              {
-                type: "logout",
-                icon: "btn-logout",
-                url: "http://localhost:8080",
-                title: "Выход",
-                method: "delete",
-                name: "Выйти из системы",
-              },
-            ]
+        createHeader({
+          data: {
+            fields: {
+              logo: { url: "http://localhost:8080", title: "Главная страница" },
+              service_name: "Сервис электронного документооборота",
+              right_part: [
+                {
+                  type: "button",
+                  icon: "btn-folder",
+                  url: "http://localhost:8080",
+                  title: "Архив долгосрочного хранения",
+                },
+                {
+                  type: "button",
+                  icon: "btn-home",
+                  url: "http://localhost:8080",
+                  title: "Рабочее место исполнителя",
+                },
+                {
+                  type: "messages",
+                  icon: "btn-message",
+                  url: "http://localhost:8080",
+                  title: "Беседы",
+                  message_new: true,
+                },
+                {
+                  type: "profile",
+                  text: "Иванов И. И.",
+                  url: "http://localhost:8080",
+                  title: "Профиль",
+                },
+                {
+                  type: "logout",
+                  icon: "btn-logout",
+                  url: "http://localhost:8080",
+                  title: "Выход",
+                  method: "delete",
+                  name: "Выйти из системы",
+                },
+              ]
+            },
           },
-        }
-        createHeader({data: headerData, element: "#header"})
+          element: "#header"}
+        )
 
         createFooter({element: "#footer"})
       }

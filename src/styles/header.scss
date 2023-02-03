@@ -1,0 +1,17 @@
+.header {
+  background-color: #1d6da8;
+  font-family: PT Sans;
+  height: 60px;
+  margin-bottom: 15px;
+  max-width: 100%;
+  top: 0;
+  z-index: 150;
+	font-size: 14px;
+  line-height: 20px;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}

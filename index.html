@@ -6,15 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HEADER AND FOOTER</title>
     <style type="text/css">
-      .wrapper {
-        height: 92vh;
+      body {
+        margin: auto;
+      }
+      .content {
+        height: 100vh;
         display: flex;
         flex-direction: column;
       }
+      .wrapper {
+        flex-grow: 1;
+      }
     </style>
 </head>
-<body>
+<body class="content">
 <div id="header"></div>
+<!-- <div id="another-header"></div> -->
 <div class="wrapper"></div>
 <div id="footer"></div>
 
@@ -63,6 +70,7 @@
       },
     }
     createHeader({data: headerData, element: "#header"})
+    // createHeader({data: headerData, element: "#another-header"})
 
     createFooter({element: "#footer"})
   }

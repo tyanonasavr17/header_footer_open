@@ -41,30 +41,6 @@ export default {
 }
 </script>
 
-<style>
-.header {
-  background-color: #1d6da8;
-  font-family: PT Sans;
-  height: 60px;
-  margin-bottom: 15px;
-  max-width: 100%;
-  top: 0;
-  z-index: 150;
-}
-
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-body {
-  margin: auto;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-br {
-  line-height: 20px;
-}
+<style scoped lang="scss">
+  @import "../styles/header.scss";
 </style>

@@ -42,6 +42,7 @@ export default {}
   clear: both;
   color: #fafbfc;
   font-family: PT Sans;
+  font-size: 14px;
   height: 55px;
   margin-top: -75px;
   padding: 20px 0 0;
@@ -113,5 +114,9 @@ div {
 
 div .span6 {
   display: inline;
+}
+
+br {
+  line-height: 20px;
 }
 </style>
