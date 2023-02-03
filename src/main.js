@@ -1,5 +1,5 @@
 import { createApp, h } from "vue";
-import Header from "./Header.vue";
+import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 
 window.createHeader = ({ data = {}, element = null } = {}) => {

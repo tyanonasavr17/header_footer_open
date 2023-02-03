@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import RightPart from "./components/RightPart.vue";
-import LeftPart from "./components/LeftPart.vue";
+import RightPart from "./RightPart.vue";
+import LeftPart from "./LeftPart.vue";
 
 export default {
   name: 'Header',
