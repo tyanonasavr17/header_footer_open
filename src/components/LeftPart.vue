@@ -1,5 +1,5 @@
 <script setup>
-import Cifropol from '../assets/main/cifropol.svg'
+import Cifropol from '/src/assets/icons/cifropol.svg'
 </script>
 <template>
   <div class="left-part clearfix">
@@ -48,7 +48,7 @@ export default {
 }
 
 .eagles-logo {
-  background: url('../assets/main/eagles.png') no-repeat center;
+  background: url('/src/assets/icons/eagles.png') no-repeat center;
   display: block;
   height: 60px;
   left: 63.5px;
@@ -66,7 +66,7 @@ export default {
 }
 
 .brand-logo {
-  background: url('../assets/main/logo.png') no-repeat center;
+  background: url('/src/assets/icons/logo.png') no-repeat center;
   display: block;
   height: 38.33px;
   left: 180px;

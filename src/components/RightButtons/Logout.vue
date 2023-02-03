@@ -1,5 +1,5 @@
 <script setup>
-import ExitDoorSvg from "/src/assets/main/exit-door.svg";
+import ExitDoorSvg from "/src/assets/icons/exit-door.svg";
 </script>
 
 <template>

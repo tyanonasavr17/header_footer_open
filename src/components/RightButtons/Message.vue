@@ -33,7 +33,7 @@ export default {
 @import "src/styles/right_part.scss";
 .header {
   .btn-message {
-    background: url("/src/assets/main/message.svg") no-repeat center;
+    background: url("/src/assets/icons/message.svg") no-repeat center;
     right: 242px;
   }
   .message-new {
