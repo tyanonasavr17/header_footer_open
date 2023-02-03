@@ -18,62 +18,62 @@
         flex-grow: 1;
       }
     </style>
-</head>
-<body class="content">
-<div id="header"></div>
-<!-- <div id="another-header"></div> -->
-<div class="wrapper"></div>
-<div id="footer"></div>
+  </head>
+  <body class="content">
+    <div id="header"></div>
+    <!-- <div id="another-header"></div> -->
+    <div class="wrapper"></div>
+    <div id="footer"></div>
 
-<script type="module" src="src/main.js" onload="createWidgets()"></script>
-<script>
-  function createWidgets() {
-    headerData = {
-      fields: {
-        logo: { url: "http://localhost:8080", title: "Главная страница" },
-        service_name: "Сервис электронного документооборота",
-        right_part: [
-          {
-            type: "button",
-            icon: "btn-folder",
-            url: "http://localhost:8080",
-            title: "Архив долгосрочного хранения",
+    <script type="module" src="src/main.js" onload="createWidgets()"></script>
+    <script>
+      function createWidgets() {
+        headerData = {
+          fields: {
+            logo: { url: "http://localhost:8080", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота",
+            right_part: [
+              {
+                type: "button",
+                icon: "btn-folder",
+                url: "http://localhost:8080",
+                title: "Архив долгосрочного хранения",
+              },
+              {
+                type: "button",
+                icon: "btn-home",
+                url: "http://localhost:8080",
+                title: "Рабочее место исполнителя",
+              },
+              {
+                type: "messages",
+                icon: "btn-message",
+                url: "http://localhost:8080",
+                title: "Беседы",
+                message_new: true,
+              },
+              {
+                type: "profile",
+                text: "Иванов И. И.",
+                url: "http://localhost:8080",
+                title: "Профиль",
+              },
+              {
+                type: "logout",
+                icon: "btn-logout",
+                url: "http://localhost:8080",
+                title: "Выход",
+                method: "delete",
+                name: "Выйти из системы",
+              },
+            ]
           },
-          {
-            type: "button",
-            icon: "btn-home",
-            url: "http://localhost:8080",
-            title: "Рабочее место исполнителя",
-          },
-          {
-            type: "messages",
-            icon: "btn-message",
-            url: "http://localhost:8080",
-            title: "Беседы",
-            message_new: true,
-          },
-          {
-            type: "profile",
-            text: "Иванов И. И.",
-            url: "http://localhost:8080",
-            title: "Профиль",
-          },
-          {
-            type: "logout",
-            icon: "btn-logout",
-            url: "http://localhost:8080",
-            title: "Выход",
-            method: "delete",
-            name: "Выйти из системы",
-          },
-        ]
-      },
-    }
-    createHeader({data: headerData, element: "#header"})
-    // createHeader({data: headerData, element: "#another-header"})
+        }
+        createHeader({data: headerData, element: "#header"})
+        // createHeader({data: headerData, element: "#another-header"})
 
-    createFooter({element: "#footer"})
-  }
-</script>
-</body>
+        createFooter({element: "#footer"})
+      }
+    </script>
+  </body>
 </html>
