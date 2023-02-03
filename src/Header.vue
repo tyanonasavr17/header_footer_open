@@ -1,5 +1,5 @@
 <template>
-  <header class="header clearfix">
+  <header class="header">
     <LeftPart 
       :header-logo="example_header_data.logo" 
       :header-service-name="example_header_data.service_name" 

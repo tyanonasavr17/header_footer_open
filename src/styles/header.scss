@@ -9,6 +9,8 @@ $header-font-color: #fafbfc;
 $header-btn-border-color: rgba(245, 245, 245, 0.5);
 
 .header {
+  display: block;
+  position: relative;
   background-color: $header-backgroud-color;
   font-family: $header-font-family;
   height: 60px;
@@ -18,10 +20,4 @@ $header-btn-border-color: rgba(245, 245, 245, 0.5);
   z-index: 150;
 	font-size: 14px;
   line-height: 20px;
-}
-
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
 }

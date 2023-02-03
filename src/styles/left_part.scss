@@ -2,34 +2,34 @@
 
 .header {
   .left-part {
-    float: left;
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 48px;
+    height: 100%;
+    align-items: center;
   }
+
   .eagles-logo {
     background: url("/src/assets/icons/eagles.png") no-repeat center;
     display: block;
-    height: 60px;
-    left: 63.5px;
     position: absolute;
-    width: 286px;
+    left: 63.5px;
+    width: 286px;    
+    height: 60px;
+    z-index: -1;
   }
 
   .cifropol-logo {
     display: block;
-    height: 26px;
-    left: 48px;
-    position: absolute;
-    top: 17px;
     width: 122px;
+    height: 26px;
   }
 
   .brand-logo {
     background: url("/src/assets/icons/logo.png") no-repeat center;
     display: block;
-    height: 38.33px;
-    left: 180px;
-    position: absolute;
-    top: 11px;
     width: 62px;
+    height: 38.3px;    
   }
 
   svg {
@@ -62,9 +62,10 @@
     text-transform: uppercase;
   }
 
-  hgroup {
-    margin-left: 252px;
-    padding-top: 13px;
+
+
+  .pr-1 {
+    padding-right: 10px;
   }
 }
 

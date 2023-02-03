@@ -2,11 +2,11 @@
 import Cifropol from '/src/assets/icons/cifropol.svg'
 </script>
 <template>
-  <div class="left-part clearfix">
+  <div class="left-part">
     <span class="eagles-logo" />
-    <span class="cifropol-logo"><Cifropol /></span>
 
-    <span>
+    <span class="cifropol-logo pr-1"><Cifropol /></span>
+    <span class="pr-1">
       <a
         :href="headerLogo.url"
         class="brand-logo"
