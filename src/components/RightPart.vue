@@ -13,7 +13,7 @@
 <script>
 import defaultButton from "/src/components/RightButtons/defaultButton.vue";
 import Message from "/src/components/RightButtons/Message.vue";
-import vispCustom from "/src/components/RightButtons/vispCustom.vue";
+import Custom from "/src/components/RightButtons/Custom.vue";
 import Profile from "/src/components/RightButtons/Profile.vue";
 import Logout from "/src/components/RightButtons/Logout.vue";
 
@@ -22,7 +22,7 @@ import { h } from "vue";
 function ComponentByType(type) {
   const Types = {
     message: Message,
-    extra_div: vispCustom,
+    extra_div: Custom,
     profile: Profile,
     logout: Logout,
   };
@@ -42,7 +42,7 @@ const TagByButton = {
         url: this.button.url,
         name: this.button.text,
         title: this.button.title,
-        "message-new": this.button.message_new,
+        messageNew: this.button.message_new,
         method: this.button.method,
         code: this.button.code,
         icon: this.button.icon,
@@ -66,4 +66,11 @@ export default {
 
 <style scoped lang="scss">
 @import "src/styles/right_part.scss";
+.header {
+  .section {
+    border-left: 1px solid $header-btn-border-color;
+    height: 100%;
+    display: inline-block;
+  }
+}
 </style>

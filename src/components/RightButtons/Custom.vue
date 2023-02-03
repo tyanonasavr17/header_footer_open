@@ -5,9 +5,7 @@
     :title="title"
   >
     <!-- тут будет код блока для ВИСПа -->
-    <div>
-      {{ code }}
-    </div>
+    {{ code }}
   </a>
 </template>
 

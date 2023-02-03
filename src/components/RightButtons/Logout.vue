@@ -38,4 +38,10 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "src/styles/right_part.scss";
+.header {
+  .btn-logout {
+    text-align: center;
+    right: 0;
+  }
+}
 </style>
