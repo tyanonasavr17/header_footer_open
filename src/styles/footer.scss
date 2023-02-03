@@ -3,11 +3,16 @@
   src: url('/src/fonts/PTSans-Regular.ttf');
 }
 
+$header-backgroud-color: #1d6da8;
+$header-font-family: "PTSans-Regular";
+$header-font-color: #fafbfc;
+$header-btn-border-color: rgba(245, 245, 245, 0.5);
+
 .footer {
-  background-color: #1d6da8;
+  background-color: $header-backgroud-color;
   clear: both;
-  color: #fafbfc;
-  font-family: PT Sans;
+  color: $header-font-color;
+  font-family: $header-font-family;
   font-size: 14px;
   height: 55px;
   margin-top: -75px;
@@ -71,7 +76,7 @@
 
 a {
   display: inline;
-  color: #fafbfc;
+  color: $header-font-color;
 }
 
 div {

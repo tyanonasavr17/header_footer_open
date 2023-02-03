@@ -1,6 +1,16 @@
+@font-face {
+  font-family: "PTSans-Regular"; /* Имя шрифта */
+  src: url("/src/fonts/PTSans-Regular.ttf"); /* Путь к файлу со шрифтом */
+}
+
+$header-backgroud-color: #1d6da8;
+$header-font-family: "PTSans-Regular";
+$header-font-color: #fafbfc;
+$header-btn-border-color: rgba(245, 245, 245, 0.5);
+
 .header {
-  background-color: #1d6da8;
-  font-family: PT Sans;
+  background-color: $header-backgroud-color;
+  font-family: $header-font-family;
   height: 60px;
   margin-bottom: 15px;
   max-width: 100%;

@@ -1,12 +1,11 @@
 <template>
   <div class="right-part">
-    <div
+    <template
       v-for="button in headerButtons"
       :key="button"
-      class="section"
     >
       <TagByButton :button="button" />
-    </div>
+    </template>
   </div>
 </template>
 
@@ -37,7 +36,8 @@ const TagByButton = {
   props: ["button"],
   render() {
     return h(
-      "span",
+      "div",
+      {class: "wrap"},
       h(ComponentByType(this.button.type), {
         url: this.button.url,
         name: this.button.text,
@@ -51,7 +51,6 @@ const TagByButton = {
   },
 };
 export default {
-  name: "RightPart",
   components: {
     TagByButton,
   },
@@ -66,11 +65,11 @@ export default {
 
 <style scoped lang="scss">
 @import "src/styles/right_part.scss";
-.header {
-  .section {
-    border-left: 1px solid $header-btn-border-color;
-    height: 100%;
-    display: inline-block;
-  }
+.right-part {
+  float: right;
+  display: inline-flex;
+}
+.wrap {
+  display: inline-flex;
 }
 </style>

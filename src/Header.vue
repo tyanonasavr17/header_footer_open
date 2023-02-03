@@ -4,18 +4,18 @@
       :header-logo="example_header_data.logo" 
       :header-service-name="example_header_data.service_name" 
     />
-    <div v-if="example_header_data.right_part.some(item => item.title === 'График приёма')">
+    <template v-if="example_header_data.right_part.some(item => item.title === 'График приёма')">
       <RightPart 
         :header-buttons="example_header_data.right_part" 
         :is-ws="true" 
       />
-    </div>
-    <div v-else-if="example_header_data.right_part.length > 0">
+    </template>
+    <template v-else-if="example_header_data.right_part.length > 0">
       <RightPart 
         :header-buttons="example_header_data.right_part" 
         :is-ws="false" 
       />
-    </div>
+    </template>
   </header>
 </template>
 
