@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import RightPart from "./components/RightPart.vue";
-import LeftPart from "./components/LeftPart.vue";
+import RightPart from "/src/components/RightPart.vue";
+import LeftPart from "/src/components/LeftPart.vue";
 
 export default {
   name: 'Header',
@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "./styles/header.scss";
+@import "/src/styles/header.scss";
 </style>

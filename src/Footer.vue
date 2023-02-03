@@ -1,5 +1,8 @@
 <template>
-  <footer id="footer" class="footer">
+  <footer
+    id="footer"
+    class="footer"
+  >
     <div class="container">
       <div class="row-fluid">
         <div class="span6">
@@ -29,5 +32,5 @@ export default {}
 </script>
 
 <style scoped lang="scss">
-@import "../styles/footer.scss";
+@import "/src/styles/footer.scss";
 </style>
