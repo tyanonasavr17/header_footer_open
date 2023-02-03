@@ -16,25 +16,18 @@
         :is-ws="false" 
       />
     </div>
-    <div v-else />
   </header>
-  <div class="wrapper" />
-  <div v-if="example_header_data.has_footer">
-    <Footer />
-  </div>
 </template>
 
 <script>
 import RightPart from "./components/RightPart.vue";
 import LeftPart from "./components/LeftPart.vue";
-import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'App',
+  name: 'Header',
   components: {
     RightPart,
-    LeftPart,
-    Footer
+    LeftPart
   },
   data: () => ({
     example_header_data: null
@@ -63,12 +56,6 @@ export default {
   content: '';
   display: table;
   clear: both;
-}
-
-.wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 body {

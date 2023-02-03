@@ -6,9 +6,18 @@
     <title>HEADER AND FOOTER</title>
     <!-- Пример! Контейнер для стилей -->
     <link id="headcss" rel="stylesheet" />
+    <style type="text/css">
+      .wrapper {
+        height: 92vh;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
   </head>
   <body style="height: 100%">
-    <div id="app"></div>
+    <div id="header"></div>
+    <div class="wrapper"></div>
+    <div id="footer"></div>
 
     <!-- Загрузка js/css из manifest.json -->
     <script>
@@ -46,51 +55,50 @@
       }
 
       function createWidgets() {
-        createHeader({
-          data: {
-            fields: {
-              logo: { url: "http://localhost:8080", title: "Главная страница" },
-              service_name: "Сервис электронного документооборота",
-              right_part: [
-                {
-                  type: "button",
-                  icon: "btn-folder",
-                  url: "http://localhost:8080",
-                  title: "Архив долгосрочного хранения",
-                },
-                {
-                  type: "button",
-                  icon: "btn-home",
-                  url: "http://localhost:8080",
-                  title: "Рабочее место исполнителя",
-                },
-                {
-                  type: "messages",
-                  icon: "btn-message",
-                  url: "http://localhost:8080",
-                  title: "Беседы",
-                  message_new: true,
-                },
-                {
-                  type: "profile",
-                  text: "Иванов И. И.",
-                  url: "http://localhost:8080",
-                  title: "Профиль",
-                },
-                {
-                  type: "logout",
-                  icon: "btn-logout",
-                  url: "http://localhost:8080",
-                  title: "Выход",
-                  method: "delete",
-                  name: "Выйти из системы",
-                },
-              ],
-              has_footer: true,
-            },
+        headerData = {
+          fields: {
+            logo: { url: "http://localhost:8080", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота",
+            right_part: [
+              {
+                type: "button",
+                icon: "btn-folder",
+                url: "http://localhost:8080",
+                title: "Архив долгосрочного хранения",
+              },
+              {
+                type: "button",
+                icon: "btn-home",
+                url: "http://localhost:8080",
+                title: "Рабочее место исполнителя",
+              },
+              {
+                type: "messages",
+                icon: "btn-message",
+                url: "http://localhost:8080",
+                title: "Беседы",
+                message_new: true,
+              },
+              {
+                type: "profile",
+                text: "Иванов И. И.",
+                url: "http://localhost:8080",
+                title: "Профиль",
+              },
+              {
+                type: "logout",
+                icon: "btn-logout",
+                url: "http://localhost:8080",
+                title: "Выход",
+                method: "delete",
+                name: "Выйти из системы",
+              },
+            ]
           },
-          element: "#app"
-        })
+        }
+        createHeader({data: headerData, element: "#header"})
+
+        createFooter({element: "#footer"})
       }
 
       fetchFile("/manifest.json", loadWidgetsSources);
