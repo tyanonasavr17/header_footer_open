@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>HEADER AND FOOTER</title>
-    <!-- Пример! Контейнер для стилей -->
-    <link id="headcss" rel="stylesheet" />
     <style type="text/css">
       body {
         margin: auto;
@@ -43,9 +41,6 @@
         const manifestHost = getManifestHost();
         var data = JSON.parse(manifestText);
         loadScript(manifestHost + data["index.html"]["file"], createWidgets)
-        document
-          .getElementById("headcss")
-          .setAttribute("href", manifestHost + data["index.css"]["file"]);
       }
 
       function getManifestHost() {
