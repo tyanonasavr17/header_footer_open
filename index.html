@@ -25,7 +25,7 @@
     <div class="wrapper"></div>
     <div id="footer"></div>
 
-    <script type="module" src="src/main.js" onload="createWidgets()"></script>
+    <script type="module" src="src/main.js"></script>
     <script>
       function createWidgets() {
         headerData = {
@@ -74,6 +74,14 @@
 
         createFooter({element: "#footer"})
       }
+
+      function logLoadError(file) {
+        console.log( "Failed to load resource " + file + "!");
+      }
+
+      const script = document.querySelector("script[type=module]")
+      script.onload = createWidgets;
+      script.onerror = function() { logLoadError(script.src); }
     </script>
   </body>
 </html>
