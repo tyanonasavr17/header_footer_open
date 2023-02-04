@@ -29,40 +29,25 @@
   </head>
   <body class="content">
     <div id="header-1"></div>
-    <div class="text-center mb-2 hidden">
-      <button type="button" onclick="setNewMessageIndicator('header-1-message-icon')">
-        Показать индикатор новых сообщений в беседах
-      </button>
-      <button type="button" onclick="unsetNewMessageIndicator('header-1-message-icon')">
-        Убрать индикатор новых сообщений в беседах
-      </button>
-    </div>
 
     <div id="header-2"></div>
 
     <div id="header-3"></div>
-    <div class="text-center mb-2 hidden">
-      <button type="button" onclick="setNewMessageIndicator('header-3-message-icon')">
-        Показать индикатор новых сообщений в беседах
-      </button>
-      <button type="button" onclick="unsetNewMessageIndicator('header-3-message-icon')">
-        Убрать индикатор новых сообщений в беседах
-      </button>
-    </div>
 
     <div id="header-4"></div>
-    <div class="text-center mb-2 hidden">
-      <button type="button" onclick="setNewMessageIndicator('header-4-message-icon')">
-        Показать индикатор новых сообщений в беседах
-      </button>
-      <button type="button" onclick="unsetNewMessageIndicator('header-4-message-icon')">
-        Убрать индикатор новых сообщений в беседах
-      </button>
-    </div>
 
     <div id="header-5"></div>
 
-    <div class="wrapper"></div>
+    <div class="wrapper">
+      <div class="text-center mb-2 hidden">
+        <button type="button" onclick="setNewMessageIndicator('header-1-message-icon'); setNewMessageIndicator('header-3-message-icon'); setNewMessageIndicator('header-4-message-icon')">
+          Показать индикатор новых сообщений в беседах
+        </button>
+        <button type="button" onclick="unsetNewMessageIndicator('header-1-message-icon'); unsetNewMessageIndicator('header-3-message-icon');unsetNewMessageIndicator('header-4-message-icon')">
+          Убрать индикатор новых сообщений в беседах
+        </button>
+      </div>
+    </div>
 
     <div id="footer"></div>
 
