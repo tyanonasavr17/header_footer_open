@@ -33,7 +33,7 @@ export default {
   display: inline-flex;
   height: 60px;
   top: 0;
-  width: 181px;
+  width: 180px;
   align-items: center;
   text-decoration: none;
 
