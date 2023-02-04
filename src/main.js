@@ -23,11 +23,15 @@ window.createFooter = ({ element = null } = {}) => {
   createApp({ render: () => h(Footer) }).mount(element);
 };
 
-window.newMessageIndicator = () => {
-  var icon = document.getElementById("newMessageIcon");
-  if (icon.style.visibility == "visible") {
-    icon.style.visibility = "hidden";
-  } else {
+window.setNewMessageIndicator = (id) => {
+  var icon = document.getElementById('newMessageIcon');
+  if (icon.style.visibility != "visible") {
     icon.style.visibility = "visible";
+  }
+};
+window.unsetNewMessageIndicator = (id) => {
+  var icon = document.getElementById('newMessageIcon');
+  if (icon.style.visibility != "hidden") {
+    icon.style.visibility = "hidden";
   }
 };
