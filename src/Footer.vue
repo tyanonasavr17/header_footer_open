@@ -4,7 +4,7 @@
     class="footer"
   >
     <div class="container">
-      <div>&copy; Сервис электронного документооборота МВД России, дата</div>
+      <div>&copy; Сервис электронного документооборота МВД России, {{ year }}</div>
       <div class="footer-right-div">
         <div class="text-right">
           Круглосуточная служба поддержки ЕЦЭ ИСОД МВД России<br>
@@ -22,7 +22,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    year: null
+  }),
+  created () {
+    this.year = new Date().getFullYear();
+  }
+}
 </script>
 
 <style scoped lang="scss">
