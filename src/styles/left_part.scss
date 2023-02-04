@@ -4,6 +4,8 @@
   .left-part {
     display: inline-flex;
     flex-direction: row;
+    float: left;
+    position: absolute;
     margin-left: 48px;
     height: 100%;
     align-items: center;
@@ -13,7 +15,7 @@
     background: url("/src/assets/icons/eagles.png") no-repeat center;
     display: block;
     position: absolute;
-    left: 63.5px;
+    left: 15px;
     width: 286px;    
     height: 60px;
     z-index: -1;
@@ -61,8 +63,6 @@
     padding: 0;
     text-transform: uppercase;
   }
-
-
 
   .pr-1 {
     padding-right: 10px;

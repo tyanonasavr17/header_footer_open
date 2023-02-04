@@ -4,17 +4,8 @@
       :header-logo="example_header_data.logo" 
       :header-service-name="example_header_data.service_name" 
     />
-    <template v-if="example_header_data.right_part.some(item => item.title === 'График приёма')">
-      <RightPart 
-        :header-buttons="example_header_data.right_part" 
-        :is-ws="true" 
-      />
-    </template>
-    <template v-else-if="example_header_data.right_part.length > 0">
-      <RightPart 
-        :header-buttons="example_header_data.right_part" 
-        :is-ws="false" 
-      />
+    <template v-if="example_header_data.right_part?.length > 0">
+      <RightPart :header-buttons="example_header_data.right_part" />
     </template>
   </header>
 </template>

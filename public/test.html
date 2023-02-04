@@ -14,21 +14,56 @@
         flex-direction: column;
       }
       .wrapper {
-        text-align: center;
         flex-grow: 1;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .mb-2 {
+        margin-bottom: 20px;
+      }
+      .hidden {
+        display: none;
       }
     </style>
   </head>
   <body class="content">
-    <div id="header"></div>
-    <div class="wrapper">
-      <button type="button" onclick="setNewMessageIndicator('message-icon-first')">
+    <div id="header-1"></div>
+    <div class="text-center mb-2 hidden">
+      <button type="button" onclick="setNewMessageIndicator('header-1-message-icon')">
         Показать индикатор новых сообщений в беседах
       </button>
-      <button type="button" onclick="unsetNewMessageIndicator('message-icon-first')">
+      <button type="button" onclick="unsetNewMessageIndicator('header-1-message-icon')">
         Убрать индикатор новых сообщений в беседах
       </button>
     </div>
+
+    <div id="header-2"></div>
+
+    <div id="header-3"></div>
+    <div class="text-center mb-2 hidden">
+      <button type="button" onclick="setNewMessageIndicator('header-3-message-icon')">
+        Показать индикатор новых сообщений в беседах
+      </button>
+      <button type="button" onclick="unsetNewMessageIndicator('header-3-message-icon')">
+        Убрать индикатор новых сообщений в беседах
+      </button>
+    </div>
+
+    <div id="header-4"></div>
+    <div class="text-center mb-2 hidden">
+      <button type="button" onclick="setNewMessageIndicator('header-4-message-icon')">
+        Показать индикатор новых сообщений в беседах
+      </button>
+      <button type="button" onclick="unsetNewMessageIndicator('header-4-message-icon')">
+        Убрать индикатор новых сообщений в беседах
+      </button>
+    </div>
+
+    <div id="header-5"></div>
+
+    <div class="wrapper"></div>
+
     <div id="footer"></div>
 
     <!-- Загрузка js/css из manifest.json -->
@@ -73,57 +108,179 @@
       }
 
       function logLoadError(file) {
-        console.log( "Failed to load resource " + file + "!");
+        console.log("Failed to load resource " + file + "!");
       }
 
       function createWidgets() {
-        createHeader({
-          data: {
-            fields: {
-              logo: { url: "#", title: "Главная страница" },
-              service_name: "Сервис электронного документооборота",
-              right_part: [
-                {
-                  type: "button",
-                  icon: "btn-folder",
-                  url: "#",
-                  title: "Архив долгосрочного хранения",
-                },
-                {
-                  type: "button",
-                  icon: "btn-home",
-                  url: "#",
-                  title: "Рабочее место исполнителя",
-                },
-                {
-                  type: "message",
-                  icon: "btn-message",
-                  url: "#",
-                  title: "Беседы",
-                  message_new: true,
-                  messageIconId: 'message-icon-first'
-                },
-                {
-                  type: "profile",
-                  text: "Иванов И. И.",
-                  url: "#",
-                  title: "Профиль",
-                },
-                {
-                  type: "logout",
-                  icon: "btn-logout",
-                  url: "#",
-                  title: "Выход",
-                  method: "delete",
-                  text: "Выйти из системы",
-                },
-              ]
-            },
-          },
-          element: "#header"}
-        )
+        messageButton = {
+          type: "message",
+          icon: "btn-message",
+          url: "#",
+          title: "Беседы"
+        }
+        homeButton = {
+          type: "button",
+          icon: "btn-home",
+          url: "#",
+          title: "Рабочее место исполнителя",
+        }
+        profileButton = {
+          type: "profile",
+          text: "Иванов И. И.",
+          url: "#",
+          title: "Профиль",
+        }
+        logoutButton = {
+          type: "logout",
+          icon: "btn-logout",
+          url: "#",
+          title: "Выход",
+          method: "delete",
+          text: "Выйти из системы",
+        }
 
-        createFooter({element: "#footer"})
+        // СЭД
+        headerData1 = {
+          fields: {
+            logo: { url: "#", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота",
+            right_part: [
+              {
+                type: "button",
+                icon: "btn-folder",
+                url: "#",
+                title: "Архив долгосрочного хранения",
+              },
+              homeButton,
+              Object.assign(messageButton, { message_new: true, messageIconId: 'header-1-message-icon' }),
+              profileButton,
+              logoutButton
+            ]
+          },
+        }
+        createHeader({ data: headerData1, element: "#header-1" })
+
+        backArrow = {
+          type: "button",
+          icon: "btn-back-arrow",
+          url: "http://localhost:8080",
+          title: "Рабочее место делопроизводителя"
+        }
+
+        // WS
+        headerData2 = {
+          fields: {
+            logo: { url: "#", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота",
+            right_part: [
+              {
+                type: "button",
+                icon: "btn-user",
+                url: "http://localhost:8080",
+                title: "График приёма"
+              },
+              {
+                type: "button",
+                icon: "btn-back-arrow",
+                url: "http://localhost:8080",
+                title: "Рабочее место делопроизводителя"
+              },
+              {
+                type: "button",
+                icon: "btn-home",
+                url: "#",
+                title: "Домой",
+              },
+              {
+                type: "button",
+                icon: "btn-stack",
+                url: "#",
+                title: "Зарегистрированные",
+              },
+              {
+                type: "button",
+                icon: "btn-star",
+                url: "#",
+                title: "Избранное"
+              },
+              {
+                type: "button",
+                icon: "btn-wrench",
+                url: "#",
+                title: "Обработанные"
+              },
+              {
+                type: "button",
+                icon: "btn-sort",
+                url: "#",
+                title: "Отправленные по маршруту"
+              },
+              {
+                type: "button",
+                icon: "btn-time",
+                url: "#",
+                title: "Активность профиля"
+              },
+              {
+                type: "button",
+                icon: "btn-calendar",
+                url: "#",
+                title: "Календарь событий"
+              },
+              profileButton,
+              {
+                type: "button",
+                icon: "btn-cog",
+                url: "#",
+                title: "Настройки"
+              },
+              logoutButton
+            ]
+          },
+        }
+        createHeader({ data: headerData2, element: "#header-2" })
+
+        // АДХ
+        headerData3 = {
+          fields: {
+            logo: { url: "#", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота",
+            right_part: [
+              {
+                type: "button",
+                icon: "btn-back-arrow",
+                url: "http://localhost:8080",
+                title: "Рабочее место делопроизводителя"
+              },
+              homeButton,
+              Object.assign(messageButton, { message_new: true, messageIconId: 'header-3-message-icon' }),
+              profileButton,
+              logoutButton
+            ]
+          },
+        }
+        createHeader({ data: headerData3, element: "#header-3" })
+
+        // Журналирование
+        headerData1['fields']['service_name'] = "Сервис журналирования"
+        messageButton = Object.assign(messageButton, { message_new: true, messageIconId: 'header-4-message-icon' }),
+        createHeader({ data: headerData1, element: "#header-4" })
+
+        // Шапка без кнопок
+        headerData5 = {
+          fields: {
+            logo: { url: "#", title: "Главная страница" },
+            service_name: "Сервис электронного документооборота"
+          },
+        }
+        createHeader({ data: headerData5, element: "#header-5" })
+        
+        createFooter({ element: "#footer" })
+
+        hiddenElements = document.getElementsByClassName("hidden")
+        while (hiddenElements.length) {
+          hiddenElements[0].classList.remove("hidden");
+        }
       }
 
       fetchFile("/manifest.json", loadWidgetsSources);
