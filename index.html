@@ -24,10 +24,10 @@
     <div id="header"></div>
     <!-- <div id="another-header"></div> -->
     <div class="wrapper">
-      <button type="button" onclick="setNewMessageIndicator()">
+      <button type="button" onclick="setNewMessageIndicator('message-icon-first')">
         Показать индикатор новых сообщений в беседах
       </button>
-      <button type="button" onclick="unsetNewMessageIndicator()">
+      <button type="button" onclick="unsetNewMessageIndicator('message-icon-first')">
         Убрать индикатор новых сообщений в беседах
       </button>
     </div>
@@ -59,6 +59,7 @@
                 url: "#",
                 title: "Беседы",
                 message_new: true,
+                messageIconId: 'message-icon-first'
               },
               {
                 type: "profile",

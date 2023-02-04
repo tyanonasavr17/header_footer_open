@@ -46,6 +46,7 @@ const TagByButton = {
         method: this.button.method,
         code: this.button.code,
         icon: this.button.icon,
+        messageIconId: this.button.messageIconId
       })
     );
   },

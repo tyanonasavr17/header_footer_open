@@ -6,7 +6,7 @@
   >
     <div
       v-if="messageNew"
-      id="newMessageIcon"
+      :id="messageIconId"
       class="header message-new"
     />
   </a>
@@ -27,6 +27,10 @@ export default {
       type: String,
       required: true,
     },
+    messageIconId:{
+      type: String,
+      required: true,
+    }
   },
 };
 </script>
