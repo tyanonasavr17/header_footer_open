@@ -15,20 +15,24 @@
         flex-direction: column;
       }
       .wrapper {
-        text-align: center;
         flex-grow: 1;
+      }
+      .center-content {
+        display: flex;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+      }
+      .hidden {
+        display: none;
       }
     </style>
   </head>
   <body class="content">
     <div id="header"></div>
-    <div class="wrapper">
-      <button type="button" onclick="setNewMessageIndicator('message-icon-first')">
-        Показать индикатор новых сообщений в беседах
-      </button>
-      <button type="button" onclick="unsetNewMessageIndicator('message-icon-first')">
-        Убрать индикатор новых сообщений в беседах
-      </button>
+    <div class="wrapper center-content">
+      <a href="#" id="test-link" class="hidden">Примеры интеграций</a>
     </div>
     <div id="footer"></div>
 
@@ -80,6 +84,16 @@
         createHeader({data: headerData, element: "#header"})
 
         createFooter({element: "#footer"})
+
+        testLink = document.getElementById("test-link")
+        if (window.development) {
+          testLink.href = window.location.href + "test.html?no_manifest=true";
+        } else if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+          testLink.href = "http://localhost:8081/test.html?manifest_host=" + window.location.href
+        } else {
+          testLink.href = window.location.href + "test.html"
+        }
+        testLink.classList.remove("hidden");
       }
 
       function logLoadError(file) {

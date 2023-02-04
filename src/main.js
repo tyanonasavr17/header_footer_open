@@ -35,3 +35,7 @@ window.unsetNewMessageIndicator = (id) => {
     icon.style.visibility = "hidden";
   }
 };
+
+if (import.meta.env.DEV) {
+  window.development = true;
+}

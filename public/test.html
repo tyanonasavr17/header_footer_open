@@ -87,11 +87,8 @@
       }
 
       function getManifestHost() {
-        const default_host = "http://hooter.sed2.rtech.ru/";
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-          get: (searchParams, prop) => searchParams.get(prop),
-        });
-
+        const default_host = window.location.origin + "/";
+        const params = getParams();
         if (params.manifest_host) { // для локального запуска: ?manifest_host=http://localhost:8080/
           return params.manifest_host;
         }
@@ -99,9 +96,18 @@
         return default_host;
       }
 
-      function loadScript(file, successCallback) {
+      function getParams() {
+        return new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+      }
+
+      function loadScript(file, successCallback, moduleScript) {
         var script = document.createElement('script');
         script.src = file;
+        if (moduleScript) {
+          script.type = "module";
+        }
         script.onload = successCallback;
         script.onerror = function() { logLoadError(file); }
         document.body.appendChild(script);
@@ -283,8 +289,11 @@
         }
       }
 
-      fetchFile("/manifest.json", loadWidgetsSources);
-
+      if (getParams().no_manifest) {
+        loadScript("src/main.js", createWidgets, true)
+      } else {
+        fetchFile("/manifest.json", loadWidgetsSources);
+      }
     </script>
   </body>
 </html>
