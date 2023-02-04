@@ -42,7 +42,6 @@ const TagByButton = {
         url: this.button.url,
         name: this.button.text,
         title: this.button.title,
-        messageNew: this.button.message_new,
         method: this.button.method,
         code: this.button.code,
         icon: this.button.icon,

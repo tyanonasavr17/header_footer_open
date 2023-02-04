@@ -143,13 +143,14 @@
                 title: "Архив долгосрочного хранения",
               },
               homeButton,
-              Object.assign(messageButton, { message_new: true, messageIconId: 'header-1-message-icon' }),
+              Object.assign(messageButton, { messageIconId: 'header-1-message-icon' }),
               profileButton,
               logoutButton
             ]
           },
         }
         createHeader({ data: headerData1, element: "#header-1" })
+        setNewMessageIndicator('header-1-message-icon') // Означает, что сообщение уже пришло на момент отрисовки шапки
 
         backArrow = {
           type: "button",
@@ -244,7 +245,7 @@
                 title: "Рабочее место делопроизводителя"
               },
               homeButton,
-              Object.assign(messageButton, { message_new: true, messageIconId: 'header-3-message-icon' }),
+              Object.assign(messageButton, { messageIconId: 'header-3-message-icon' }),
               profileButton,
               logoutButton
             ]
@@ -254,7 +255,7 @@
 
         // Журналирование
         headerData1['fields']['service_name'] = "Сервис журналирования"
-        messageButton = Object.assign(messageButton, { message_new: true, messageIconId: 'header-4-message-icon' }),
+        messageButton = Object.assign(messageButton, { messageIconId: 'header-4-message-icon' }),
         createHeader({ data: headerData1, element: "#header-4" })
 
         // Шапка без кнопок

@@ -5,9 +5,8 @@
     :title="title"
   >
     <div
-      v-if="messageNew"
       :id="messageIconId"
-      class="header message-new"
+      :class="['header', 'message-new', 'no-notice-icon']"
     />
   </a>
 </template>
@@ -17,10 +16,6 @@ export default {
   props: {
     url: {
       type: String,
-      required: true,
-    },
-    messageNew: {
-      type: Boolean,
       required: true,
     },
     title: {
@@ -47,6 +42,8 @@ export default {
   position: relative;
   top: 15px;
   width: 8px;
+}
+.no-notice-icon{
   visibility: hidden;
 }
 </style>
