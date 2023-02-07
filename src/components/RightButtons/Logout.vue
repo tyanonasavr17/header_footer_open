@@ -1,16 +1,16 @@
 <script setup>
-import ExitDoorSvg from "/src/assets/icons/exit-door.svg";
+import ExitDoorIcon from "/src/assets/icons/exit-door.svg";
 </script>
 
 <template>
   <a
     :href="url"
-    class="header-btn btn-with-border btn-logout"
+    class="header-btn btn-with-border"
     :title="title"
     :name="name"
     :data-method="method"
   >
-    <ExitDoorSvg class="exit_door" />
+    <ExitDoorIcon />
   </a>
 </template>
 
@@ -38,11 +38,4 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "src/styles/right_part.scss";
-.btn-logout {
-  text-align: center;
-
-  .exit_door {
-    margin-top: 10px;
-  }
-}
 </style>

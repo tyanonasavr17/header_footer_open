@@ -2,12 +2,14 @@
 @import "/src/styles/header.scss";
 .header {
   .header-btn {
-    display: inline;
+    display: flex;
     height: 60px;
-    overflow: hidden;
-    top: 0;
     min-width: 60px;
+    overflow: hidden;
+    position: relative;
     box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
   }
 
   .btn-with-border {
