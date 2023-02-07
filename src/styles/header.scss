@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "PTSans-Regular"; /* Имя шрифта */
-  src: url("/src/fonts/PTSans-Regular.ttf"); /* Путь к файлу со шрифтом */
-}
+@import './fonts.scss';
 
 $header-backgroud-color: #1d6da8;
 $header-font-family: "PTSans-Regular";

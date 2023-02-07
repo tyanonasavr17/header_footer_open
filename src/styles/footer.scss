@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "PTSans-Regular";
-  src: url('/src/fonts/PTSans-Regular.ttf');
-}
+@import './fonts.scss';
 
 $footer-backgroud-color: #1d6da8;
 $footer-font-family: "PTSans-Regular";

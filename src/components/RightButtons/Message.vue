@@ -35,7 +35,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/styles/right_part.scss";
+@import "/src/styles/right_part.scss";
 .message-new {
   background-color: rgba(190, 38, 39, 1);
   border-radius: 50%;

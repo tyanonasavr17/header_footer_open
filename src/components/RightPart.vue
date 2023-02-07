@@ -64,7 +64,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "src/styles/right_part.scss";
+@import "/src/styles/right_part.scss";
 .right-part {
   float: right;
   display: inline-flex;

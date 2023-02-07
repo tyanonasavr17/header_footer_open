@@ -28,7 +28,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-@import "src/styles/right_part.scss";
+@import "/src/styles/right_part.scss";
 .avatar-section {
   display: inline-flex;
   height: 60px;
