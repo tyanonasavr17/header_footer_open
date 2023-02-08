@@ -37,7 +37,7 @@ const TagByButton = {
   render() {
     return h(
       "div",
-      {class: "wrap"},
+      { class: "wrap" },
       h(ComponentByType(this.button.type), {
         url: this.button.url,
         name: this.button.text,
@@ -65,11 +65,4 @@ export default {
 
 <style scoped lang="scss">
 @import "/src/styles/right_part.scss";
-.right-part {
-  float: right;
-  display: inline-flex;
-}
-.wrap {
-  display: inline-flex;
-}
 </style>

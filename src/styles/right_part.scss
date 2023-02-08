@@ -12,6 +12,15 @@
     justify-content: center;
   }
 
+  .right-part {
+    float: right;
+    display: inline-flex;
+  }
+
+  .wrap {
+    display: inline-flex;
+  }
+
   .btn-with-border {
     border-left: 1px solid $header-btn-border-color;
   }

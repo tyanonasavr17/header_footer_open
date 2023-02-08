@@ -44,7 +44,7 @@ export default {
     padding-left: 2px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 113px;
+    width: 108px;
   }
 
   .avatar {

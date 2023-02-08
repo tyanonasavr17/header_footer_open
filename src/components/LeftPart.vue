@@ -3,16 +3,18 @@ import Cifropol from '/src/assets/icons/cifropol.svg'
 </script>
 <template>
   <div class="left-part">
-    <span class="eagles-logo" />
+    <div class="eagles-logo" />
 
-    <span class="cifropol-logo pr-1"><Cifropol /></span>
-    <span class="pr-1">
+    <div class="cifropol-logo">
+      <Cifropol />
+    </div>
+    <div>
       <a
         :href="headerLogo.url"
         class="brand-logo"
         :title="headerLogo.title"
       />
-    </span>
+    </div>
     <hgroup>
       <h1>МВД России</h1>
       <h2>{{ headerServiceName }}</h2>
