@@ -26,7 +26,7 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 1000,
     assetsDir: "header_footer/src/assets",
-    assetsInlineLimit: 20000,
+    assetsInlineLimit: 300000,
   },
   server: {
     host: "0.0.0.0",

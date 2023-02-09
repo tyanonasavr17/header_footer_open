@@ -12,6 +12,7 @@
         height: 100vh;
         display: flex;
         flex-direction: column;
+        font-size: 14px;
       }
       .wrapper {
         flex-grow: 1;
@@ -19,11 +20,11 @@
       .text-center {
         text-align: center;
       }
-      .mb-2 {
-        margin-bottom: 20px;
-      }
       .hidden {
         display: none;
+      }
+      .button {
+        font-size: 14px;
       }
     </style>
   </head>
@@ -39,11 +40,11 @@
     <div id="header-5"></div>
 
     <div class="wrapper">
-      <div class="text-center mb-2 hidden">
-        <button type="button" onclick="setNewMessageIndicator('header-1-message-icon'); setNewMessageIndicator('header-3-message-icon'); setNewMessageIndicator('header-4-message-icon')">
+      <div class="text-center hidden">
+        <button type="button" class="button" onclick="setNewMessageIndicator('header-1-message-icon'); setNewMessageIndicator('header-3-message-icon'); setNewMessageIndicator('header-4-message-icon')">
           Показать индикатор новых сообщений в беседах
         </button>
-        <button type="button" onclick="unsetNewMessageIndicator('header-1-message-icon'); unsetNewMessageIndicator('header-3-message-icon');unsetNewMessageIndicator('header-4-message-icon')">
+        <button type="button" class="button" onclick="unsetNewMessageIndicator('header-1-message-icon'); unsetNewMessageIndicator('header-3-message-icon');unsetNewMessageIndicator('header-4-message-icon')">
           Убрать индикатор новых сообщений в беседах
         </button>
       </div>

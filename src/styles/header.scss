@@ -1,20 +1,22 @@
 @import './fonts.scss';
 
 $header-backgroud-color: #1d6da8;
-$header-font-family: "PTSans-Regular";
+$header-font-family: 'PT Sans', sans-serif;
 $header-font-color: #fff;
 $header-btn-border-color: rgba(245, 245, 245, 0.5);
 
 .header {
   display: block;
   position: relative;
+  height: 60px;
+  max-width: 100%;
+  margin-bottom: 15px;
   background-color: $header-backgroud-color;
   font-family: $header-font-family;
-  height: 60px;
-  margin-bottom: 15px;
-  max-width: 100%;
-  z-index: 150;
+  font-weight: normal;
+  font-style: normal;
 	font-size: 14px;
-  line-height: 20px;
+  line-height: normal;
   text-align: left;
+  z-index: 150;
 }

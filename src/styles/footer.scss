@@ -1,7 +1,7 @@
 @import './fonts.scss';
 
 $footer-backgroud-color: #1d6da8;
-$footer-font-family: "PTSans-Regular";
+$footer-font-family: 'PT Sans', sans-serif;
 $footer-font-color: #fff;
 $footer-btn-border-color: rgba(245, 245, 245, 0.5);
 
@@ -17,6 +17,8 @@ $footer-btn-border-color: rgba(245, 245, 245, 0.5);
   background-color: $footer-backgroud-color;
   color: $footer-font-color;
   font-family: $footer-font-family;
+  font-weight: normal;
+  font-style: normal;
   font-size: 14px;
 }
 
