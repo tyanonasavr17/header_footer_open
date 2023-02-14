@@ -39,6 +39,8 @@
 
     <div id="header-5"></div>
 
+    <div id="header-6"></div>
+
     <div class="wrapper">
       <div class="text-center hidden">
         <button type="button" class="button" onclick="setNewMessageIndicator('header-1-message-icon'); setNewMessageIndicator('header-3-message-icon'); setNewMessageIndicator('header-4-message-icon')">
@@ -265,6 +267,36 @@
           },
         }
         createHeader({ data: headerData5, element: "#header-5" })
+
+        headerData6 = {
+          fields: {
+            logo: { url: "#", title: "Главная страница" },
+            right_part: [
+              {
+                type: "dropdown",
+                url: "#",
+                title: "Таблица версий",
+              },
+              {
+                type: "dropdown",
+                url: "#",
+                title: "Обновление ФИАС",
+              },
+              {
+                type: "dropdown",
+                url: "#",
+                title: "Дополнительно",
+                links: [
+                  { 
+                    url: "#",
+                    title: "Swagger"
+                  }
+                ]
+              },
+            ]
+          },
+        }
+        createHeader({ data: headerData6, element: "#header-6" })
         
         createFooter({ element: "#footer" })
 

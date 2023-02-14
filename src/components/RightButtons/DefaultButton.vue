@@ -6,7 +6,6 @@
   >
     <component :is="dynamicIcon" />
   </a>
-  
 </template>
 
 <script>

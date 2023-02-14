@@ -2,16 +2,17 @@ import { createApp, h } from "vue";
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
 
+function createComponent(component, data, element) {
+  createApp({ data: () => data, render: () => h(component) }).mount(element);
+}
+
 window.createHeader = ({ data = {}, element = null } = {}) => {
   if (data == null || element == null) {
     console.error("Failed to create header: data or element is not defined!");
     return;
   }
 
-  createApp({
-    data: () => data,
-    render: () => h(Header),
-  }).mount(element);
+  createComponent(Header, data, element);
 };
 
 window.createFooter = ({ element = null } = {}) => {
@@ -20,7 +21,7 @@ window.createFooter = ({ element = null } = {}) => {
     return;
   }
 
-  createApp({ render: () => h(Footer) }).mount(element);
+  createComponent(Footer, null, element);
 };
 
 window.setNewMessageIndicator = (id) => {

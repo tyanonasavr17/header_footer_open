@@ -15,6 +15,7 @@ import Avatar from "/src/assets/icons/avatar.svg";
 
 <script>
 export default {
+  name: 'ProfileButton',
   props: {
     url: {
       type: String,

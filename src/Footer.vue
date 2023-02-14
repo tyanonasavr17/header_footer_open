@@ -12,9 +12,15 @@
         </div>
         <div class="footer__divider" />
         <div>
-          <a href="https://it.mvd.ru/profile/requests/new" class="footer__link">helpdesk@mvd.ru</a>
+          <a
+            href="https://it.mvd.ru/profile/requests/new"
+            class="footer__link"
+          >helpdesk@mvd.ru</a>
           <br>
-          <a href="mailto:helpdesk@mvd.ru" class="footer__link">Отправить обращение</a>
+          <a
+            href="mailto:helpdesk@mvd.ru"
+            class="footer__link"
+          >Отправить обращение</a>
         </div>
       </div>
     </div>

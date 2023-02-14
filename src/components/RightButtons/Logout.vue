@@ -16,6 +16,7 @@ import ExitDoorIcon from "/src/assets/icons/exit-door.svg";
 
 <script>
 export default {
+  name: 'LogoutButton',
   props: {
     url: {
       type: String,

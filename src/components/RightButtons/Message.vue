@@ -18,6 +18,7 @@ import Message from '/src/assets/icons/message.svg';
 
 <script>
 export default {
+  name: 'MessageButton',
   props: {
     url: {
       type: String,

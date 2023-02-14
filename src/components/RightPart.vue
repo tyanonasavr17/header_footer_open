@@ -1,7 +1,7 @@
 <template>
   <div class="right-part">
     <template
-      v-for="button in headerButtons"
+      v-for="button in HeaderButtons"
       :key="button"
     >
       <TagByButton :button="button" />
@@ -10,11 +10,12 @@
 </template>
 
 <script>
-import defaultButton from "/src/components/RightButtons/defaultButton.vue";
+import DefaultButton from "/src/components/RightButtons/DefaultButton.vue";
 import Message from "/src/components/RightButtons/Message.vue";
 import Custom from "/src/components/RightButtons/Custom.vue";
 import Profile from "/src/components/RightButtons/Profile.vue";
 import Logout from "/src/components/RightButtons/Logout.vue";
+import DropDown from "/src/components/RightButtons/DropDown.vue";
 
 import { h } from "vue";
 
@@ -24,10 +25,11 @@ function ComponentByType(type) {
     extra_div: Custom,
     profile: Profile,
     logout: Logout,
+    dropdown: DropDown,
   };
   var Component = Types[type];
   if (Component == null) {
-    return defaultButton;
+    return DefaultButton;
   } else {
     return Component;
   }
@@ -45,7 +47,8 @@ const TagByButton = {
         method: this.button.method,
         code: this.button.code,
         icon: this.button.icon,
-        messageIconId: this.button.messageIconId
+        messageIconId: this.button.messageIconId,
+        links: this.button.links || []
       })
     );
   },
