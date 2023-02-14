@@ -32,7 +32,7 @@ export default {
     },
     headerServiceName: {
       type: String,
-      required: true
+      required: false
     }
   }
 }

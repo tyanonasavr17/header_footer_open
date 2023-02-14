@@ -1,7 +1,7 @@
 <template>
   <div class="right-part">
     <template
-      v-for="button in HeaderButtons"
+      v-for="button in headerButtons"
       :key="button"
     >
       <TagByButton :button="button" />
