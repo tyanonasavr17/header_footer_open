@@ -53,10 +53,10 @@
     },
   };
   </script>
+
   <style global lang="scss">
-  @import "/src/styles/right_part.scss";
   .header__right_part__a span {
-    color: $header-font-color;
+    color: #fff;
     font-size: 14px;
     overflow: hidden;
     padding-left: 2px;
@@ -64,6 +64,7 @@
     white-space: nowrap;
   }
   </style>
+
   <style scoped lang="scss">
     @import "/src/styles/right_part.scss";
   .header__right_part__a {
