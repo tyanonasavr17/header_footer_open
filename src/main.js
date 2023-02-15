@@ -26,13 +26,13 @@ window.createFooter = ({ element = null } = {}) => {
 
 window.setNewMessageIndicator = (id) => {
   var icon = document.getElementById(id);
-  if (icon.style.visibility != "visible") {
+  if (!!icon && icon.style.visibility != "visible") {
     icon.style.visibility = "visible";
   }
 };
 window.unsetNewMessageIndicator = (id) => {
   var icon = document.getElementById(id);
-  if (icon.style.visibility != "hidden") {
+  if (!!icon && icon.style.visibility != "hidden") {
     icon.style.visibility = "hidden";
   }
 };
