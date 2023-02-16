@@ -7,6 +7,7 @@
       :href="url"
       :class="['header__right_part__a','dropdown-btn']"
       :title="title"
+      v-bind="customAttrs"
     >
       <span>
         {{ title }}
@@ -27,6 +28,7 @@
     :href="url"
     :class="['header__right_part__a']"
     :title="title"
+    v-bind="customAttrs"
   >
     <span>
       {{ title }}
@@ -49,6 +51,11 @@
       links:{
         type: Array,
         required: true,
+      },
+      customAttrs:{
+        type: Object,
+        default: null,
+        required: false,
       }
     },
   };

@@ -48,7 +48,8 @@ const TagByButton = {
         code: this.button.code,
         icon: this.button.icon,
         messageIconId: this.button.messageIconId,
-        links: this.button.links || []
+        links: this.button.links || [],
+        customAttrs: this.button.customAttrs
       })
     );
   },
