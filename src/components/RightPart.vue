@@ -1,5 +1,5 @@
 <template>
-  <div class="right-part">
+  <div :class="['right-part', right_part_margin]">
     <template
       v-for="button in headerButtons"
       :key="button"
@@ -62,6 +62,11 @@ export default {
     headerButtons: {
       type: Array,
       required: true,
+    },
+  },
+  computed: {
+    right_part_margin() {
+      return this.headerButtons[0]?.type === 'dropdown' ? 'mr48' : '';
     },
   },
 };
