@@ -5,11 +5,11 @@ import Avatar from "/src/assets/icons/avatar.svg";
 <template>
   <a
     :href="url"
-    class="avatar-section btn-with-border"
+    class="avatar btn-with-border"
     title="Профиль"
   >
-    <Avatar class="avatar" />
-    <span>{{ name }}</span>
+    <Avatar />
+    <span class="avatar__text">{{ name }}</span>
   </a>
 </template>
 
@@ -30,27 +30,22 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "/src/styles/right_part.scss";
-.avatar-section {
+.avatar {
   display: inline-flex;
   height: 60px;
-  top: 0;
-  width: 180px;
+  width: 148px;
+  padding-left: 18px;
   align-items: center;
   text-decoration: none;
 
-  span {
+  .avatar__text {
     color: $header-font-color;
     font-size: 12px;
     overflow: hidden;
-    padding-left: 2px;
+    padding-left: 6px;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 108px;
-  }
-
-  .avatar {
-    margin-left: 11px;
-    margin-top: 6px;
   }
 }
 </style>
