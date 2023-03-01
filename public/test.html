@@ -70,8 +70,14 @@
 
       function loadWidgetsSources(manifestText) {
         const manifestHost = getManifestHost();
-        var data = JSON.parse(manifestText);
-        loadScript(manifestHost + data["index.html"]["file"], createWidgets)
+        let data = JSON.parse(manifestText);
+        if (supportsESModules()) {
+            loadModuleScript(manifestHost + data["index.html"]["file"]);
+        } else {
+            loadLegacyScript(manifestHost + data["vite/legacy-polyfills-legacy"]["file"], function () {
+                loadLegacyScript(manifestHost + data["index-legacy.html"]["file"], createWidgets);
+            });
+        }
       }
 
       function getManifestHost() {
@@ -80,7 +86,7 @@
         if (params.manifest_host) { // для локального запуска: ?manifest_host=http://localhost:8080/
           return params.manifest_host;
         }
-        
+
         return default_host;
       }
 
@@ -90,15 +96,36 @@
         });
       }
 
-      function loadScript(file, successCallback, moduleScript) {
-        var script = document.createElement('script');
+
+      function loadLegacyScript(file, onload) {
+        let script = document.createElement('script');
         script.src = file;
-        if (moduleScript) {
-          script.type = "module";
-        }
-        script.onload = successCallback;
-        script.onerror = function() { logLoadError(file); }
+        script.onerror = function () {
+            logLoadError(file);
+        };
+        script.onload = onload;
         document.body.appendChild(script);
+      }
+
+      function loadModuleScript(file) {
+        let script = document.createElement('script');
+        script.src = file;
+        script.type = 'module';
+        script.onerror = function () {
+            logLoadError(file);
+        };
+        script.onload = createWidgets;
+        document.body.appendChild(script);
+      }
+
+      function supportsESModules() {
+        // если ошибок нет, то модули поддерживаются
+        try {
+            new Function('import("")');
+            return true;
+        } catch (err) {
+            return false;
+        }
       }
 
       function logLoadError(file) {
@@ -290,7 +317,7 @@
                 url: "#",
                 title: "Дополнительно",
                 links: [
-                  { 
+                  {
                     url: "#",
                     title: "Swagger"
                   }
@@ -300,7 +327,7 @@
           },
         }
         createHeader({ data: headerData6, element: "#header-6" })
-        
+
         createFooter({ element: "#footer" })
 
         // Отображание кнопок для управления индикацией сообщений.

@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import legacy from '@vitejs/plugin-legacy';
 import svgLoader from "vite-svg-loader";
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
@@ -12,6 +13,15 @@ export default defineConfig({
           isCustomElement: (tag) => tag === 'hgroup',
         }
       }
+    }),
+    legacy({
+      targets: [
+        "ie 10",
+        "firefox 36",
+        "opera 30",
+        "chrome 68",
+        "safari 6"
+      ]
     }),
     svgLoader(),
     cssInjectedByJsPlugin(),
