@@ -72,11 +72,11 @@
         const manifestHost = getManifestHost();
         let data = JSON.parse(manifestText);
         if (supportsESModules()) {
-            loadModuleScript(manifestHost + data["index.html"]["file"]);
+          loadModuleScript(manifestHost + data["index.html"]["file"], createWidgets);
         } else {
-            loadLegacyScript(manifestHost + data["vite/legacy-polyfills-legacy"]["file"], function () {
-                loadLegacyScript(manifestHost + data["index-legacy.html"]["file"], createWidgets);
-            });
+          loadLegacyScript(manifestHost + data["vite/legacy-polyfills-legacy"]["file"], function () {
+            loadLegacyScript(manifestHost + data["index-legacy.html"]["file"], createWidgets);
+          });
         }
       }
 
@@ -101,30 +101,30 @@
         let script = document.createElement('script');
         script.src = file;
         script.onerror = function () {
-            logLoadError(file);
+          logLoadError(file);
         };
         script.onload = onload;
         document.body.appendChild(script);
       }
 
-      function loadModuleScript(file) {
+      function loadModuleScript(file, onload) {
         let script = document.createElement('script');
         script.src = file;
         script.type = 'module';
         script.onerror = function () {
-            logLoadError(file);
+          logLoadError(file);
         };
-        script.onload = createWidgets;
+        script.onload = onload;
         document.body.appendChild(script);
       }
 
       function supportsESModules() {
         // если ошибок нет, то модули поддерживаются
         try {
-            new Function('import("")');
-            return true;
+          new Function('import("")');
+          return true;
         } catch (err) {
-            return false;
+          return false;
         }
       }
 
@@ -337,7 +337,7 @@
       }
 
       if (getParams().no_manifest) {
-        loadScript("src/main.js", createWidgets, true)
+        loadModuleScript("src/main.js", createWidgets)
       } else {
         fetchFile("/manifest.json", loadWidgetsSources);
       }
