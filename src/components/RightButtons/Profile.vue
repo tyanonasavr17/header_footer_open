@@ -32,6 +32,7 @@ export default {
 @import "/src/styles/right_part.scss";
 .avatar {
   display: inline-flex;
+  box-sizing: content-box;
   height: 60px;
   width: 148px;
   padding-left: 18px;

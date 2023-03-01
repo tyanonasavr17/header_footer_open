@@ -3,11 +3,11 @@
 .header {
   .header-btn {
     display: flex;
+    box-sizing: content-box;
     height: 60px;
     min-width: 60px;
     overflow: hidden;
     position: relative;
-    box-sizing: content-box;
     align-items: center;
     justify-content: center;
   }
