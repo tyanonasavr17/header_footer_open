@@ -37,6 +37,26 @@ window.unsetNewMessageIndicator = (id) => {
   }
 };
 
+window.createDropdown = (id, values) => {
+  const dropdownEl = document.getElementById(id);
+  const listEl = Object.assign(document.createElement("ul"), {className:"dropdown-menu"});
+
+  values.forEach(value => {
+    const listItemEl = document.createElement("li");
+    const linkEl = document.createElement("a");
+
+    linkEl.textContent = value;
+    listItemEl.appendChild(linkEl);
+    listEl.appendChild(listItemEl);
+  });
+
+  dropdownEl.addEventListener("click", () => {
+    listEl.classList.toggle("dropdown-menu--open");
+  });
+
+  dropdownEl.appendChild(listEl);
+}
+
 if (import.meta.env.DEV) {
   window.development = true;
 }

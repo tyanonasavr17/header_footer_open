@@ -247,7 +247,19 @@
                 url: "#",
                 title: "Календарь событий"
               },
-              profileButton,
+                {
+                    type: "profile",
+                    text: "Иванов И. И.",
+                    url: "",
+                    title: "",
+                    anotherProviderUsers: 'another-provider-users',
+                    customAttrs: {
+                        'data-toggle': "dropdown",
+                        'aria-expanded': "false",
+                        'data-method': "put",
+                        'remote': true
+                    }
+                },
               {
                 type: "button",
                 icon: "cog",
@@ -259,6 +271,7 @@
           },
         }
         createHeader({ data: headerData2, element: "#header-2" })
+          createDropdown('another-provider-users', ["Option 1", "Option 2", "Option 3"])
 
         // АДХ
         headerData3 = {

@@ -48,6 +48,7 @@ const TagByButton = {
         code: this.button.code,
         icon: this.button.icon,
         messageIconId: this.button.messageIconId,
+        anotherProviderUsers: this.button.anotherProviderUsers,
         links: this.button.links || [],
         customAttrs: this.button.customAttrs
       })

@@ -9,6 +9,11 @@ import Avatar from "/src/assets/icons/avatar.svg";
     title="Профиль"
   >
     <Avatar />
+    <div
+        :id="anotherProviderUsers"
+        class="dropdown"
+        v-bind="customAttrs"
+    />
     <span class="avatar__text">{{ name }}</span>
   </a>
 </template>
@@ -25,7 +30,16 @@ export default {
       type: String,
       required: true,
     },
-  },
+    anotherProviderUsers:{
+      type: String,
+      required: false,
+    },
+    customAttrs:{
+      type: Object,
+      default: null,
+      required: false,
+    }
+  }
 };
 </script>
 <style scoped lang="scss">
@@ -47,6 +61,16 @@ export default {
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 108px;
+  }
+
+  .dropdown-menu {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333333;
+    white-space: nowrap;
   }
 }
 </style>
